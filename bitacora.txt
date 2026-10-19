@@ -1,0 +1,15 @@
+Petición del documento
+- Url completa: http://127.0.0.1:5500/index.html
+- Protocolo: http
+- Host: 127.0.0.1:5500
+- Puerto: 5500
+- Ruta: 127.0.0.1:5500/index.html
+- Método de la petición: GET
+- Código de estado: 304 
+
+El código que me aparece al buscar una página que no aparece es el código 404, que significa que la página no exite
+
+Roles:
+- HTML: La estructura de todas las páginas, Por ejemplos el titulo, la bienvenida y todo lo que lleva la página de inicio
+- CSS: EL estilo de todas las páginas, por ejemplo los colores, el fondo y tamaños de la página de inicio
+- JS: Es el que le va a dar funcionalidad a todas las páginas, alertas, verificación de las páginas
