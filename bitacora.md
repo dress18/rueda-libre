@@ -26,3 +26,46 @@ Roles:
 | paginas/reservas.html | Inicio | ../index.html |
 | paginas/reservas.html | Tarifas y rutas | tarifas.html |
 | paginas/reservas.html | Reservas | reservas.html |
+
+### Esquema de las regiones de cada página
+
+```text
+index.html
+┌ header
+│  nombre del negocio (h1) + presentación + navegación principal (nav)
+├ main
+│  ├ section: ¿Quiénes somos?
+│  ├ section: Nuestros servicios
+│  │  ├ article: Alquiler de bicicletas urbanas
+│  │  ├ article: Rutas turísticas
+│  │  └ article: Alquiler por horas o días
+│  ├ section: ¿Cómo alquilar?
+│  └ section: Encuéntranos
+└ footer: derechos reservados
+
+paginas/tarifas.html
+┌ header
+│  nombre del negocio + título de la página (h1) + presentación
+│  + navegación principal (nav)
+├ main
+│  ├ section: Tarifas de alquiler de bicicletas + tabla
+│  ├ section: Recorridos guiados + tabla
+│  └ section: Información importante
+│     └ aside: lista de qué debes llevar
+└ footer: derechos reservados + enlace a inicio
+
+paginas/reservas.html
+┌ header
+│  nombre del negocio + título de la página (h1)
+│  + navegación principal (nav)
+├ main
+│  ├ section: Reserva con nosotros
+│  ├ section: Horario de atención
+│  │  └ aside: horario y salida de recorridos
+│  └ section: Consulta nuestras tarifas
+└ footer: contacto + derechos reservados
+```
+
+No se conservan `div` ni `span`: los elementos actuales pueden expresarse
+con regiones o elementos HTML semánticos, y no se necesita un contenedor
+genérico para aplicar estructura o presentación.
