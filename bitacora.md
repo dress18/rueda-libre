@@ -77,3 +77,27 @@ genérico para aplicar estructura o presentación.
   que tenga un formato de correo antes de enviar el formulario.
 - La fecha usa `type="date"` para ofrecer un selector de fecha y recibir un
   valor estructurado en lugar de texto libre.
+
+### Pruebas de validación del formulario
+
+| Campo | Dato de prueba | Resultado esperado | Resultado obtenido |
+|---|---|---|---|
+| Nombre completo | `Al` | Rechazado: menos de 3 caracteres | Please lengthen this text to 3 characters or more |
+| Documento | `12345` | Escribe entre 6 y 10 dígitos, sin puntos ni espacios. | Escribe entre 6 y 10 dígitos, sin puntos ni espacios. |
+| Documento | `12AB567` | Rechazado: contiene letras | Please match the request format: Escribe entre 6 y 10 dígitos, sin puntos ni espacios. |
+| Correo electrónico | `persona@` | Por favor ingrese la parte siguiente después del @| please enter a part following '@'. 'persona@' is incomplete |
+| Celular | `3001234567` | Aceptado: 10 dígitos e inicia por 3 | Sin mensaje |
+| Celular | `1234567890` | Escribe 10 digitos y comienza por 3, por ejemplo 3001234567 | Escribe 10 digitos y comienza por 3, por ejemplo 3001234567 |
+| Celular | `300123` | Escribe 10 digitos y comienza por 3, por ejemplo 3001234567 | Escribe 10 digitos y comienza por 3, por ejemplo 3001234567 |
+| Fecha del alquiler | `2026-10-31` | Rechazado: anterior al 1 de noviembre | Value must be 11/01/2026 or later |
+| Fecha del alquiler | `2027-01-01` | Rechazado: posterior al 31 de diciembre | Value must be 11/01/2026 or later |
+| Cantidad de bicicletas | `7` | Rechazado: supera el máximo de 6 | valuw must be less than or equal to 6 |
+| Comentarios | 301 caracteres | Rechazado: supera el máximo de 300 | No deja ingresar más caracteres después de el límite establecido |
+
+### Recorrido de teclado
+
+El formulario mantiene el orden de foco del documento: datos personales,
+fecha y opciones de alquiler, confirmación y botón de envío. Las opciones
+del plan comparten un grupo de radio para recorrerlas con las flechas; la
+aceptación de políticas se activa con la barra espaciadora.
+Resultado del recorrido completo por teclado: pendiente de ejecutar en navegador.
