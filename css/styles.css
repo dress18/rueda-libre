@@ -1,5 +1,6 @@
 :root {
     --color-cream: #FAF6EF;
+    --color-white: #FFFFFF;
     --color-night-blue: #14213D;
     --color-asphalt-gray: #5B6470;
     --color-route-green: #1E7A4F;
@@ -34,16 +35,48 @@ h6 {
 header,
 footer {
     padding: var(--space-large);
-    color: var(--color-cream);
+    color: var(--color-white);
     background-color: var(--color-night-blue);
 }
 
-header nav ul {
+#menu {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-medium);
-    padding: 0;
+    margin: var(--space-medium) 0 0;
+    padding: var(--space-small);
+    background-color: var(--color-cream);
     list-style: none;
+}
+
+#menu a {
+    display: inline-block;
+    padding: var(--space-small) var(--space-medium);
+    border-radius: 0.25rem;
+    color: var(--color-asphalt-gray);
+    text-decoration: none;
+    transition: color 150ms ease, background-color 150ms ease;
+}
+
+.activo {
+    color: var(--color-route-green);
+    font-weight: 600;
+}
+
+#menu a.activo {
+    color: var(--color-route-green);
+}
+
+header nav #menu a:hover {
+    color: var(--color-night-blue);
+    background-color: var(--color-pedal-orange);
+    text-decoration: underline;
+}
+
+header nav #menu a:focus {
+    color: var(--color-night-blue);
+    background-color: var(--color-pedal-orange);
+    text-decoration: underline;
 }
 
 a {
@@ -52,7 +85,31 @@ a {
 
 header a,
 footer a {
-    color: var(--color-cream);
+    color: var(--color-white);
+}
+
+a.cta {
+    display: inline-block;
+    margin-top: var(--space-medium);
+    padding: var(--space-small) var(--space-medium);
+    border-radius: 0.25rem;
+    color: var(--color-white);
+    background-color: var(--color-route-green);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 150ms ease, background-color 150ms ease;
+}
+
+header a.cta:hover {
+    color: var(--color-night-blue);
+    background-color: var(--color-pedal-orange);
+    text-decoration: underline;
+}
+
+header a.cta:focus {
+    color: var(--color-night-blue);
+    background-color: var(--color-pedal-orange);
+    text-decoration: underline;
 }
 
 main section {
@@ -94,7 +151,7 @@ td {
 }
 
 th {
-    color: var(--color-cream);
+    color: var(--color-white);
     background-color: var(--color-night-blue);
 }
 
@@ -111,19 +168,37 @@ textarea {
 button {
     padding: var(--space-small) var(--space-medium);
     border: 0;
-    color: var(--color-cream);
+    color: var(--color-white);
     background-color: var(--color-route-green);
     font: inherit;
     cursor: pointer;
 }
 
-button:focus-visible,
-a:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-    outline: 3px solid var(--color-pedal-orange);
+button:hover {
+    color: var(--color-night-blue);
+    background-color: var(--color-pedal-orange);
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: var(--color-route-green);
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid var(--color-night-blue);
     outline-offset: 2px;
+    box-shadow: 0 0 0 5px var(--color-cream);
+}
+
+input[type="date"]:focus {
+    outline: 3px solid var(--color-night-blue);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px var(--color-cream);
 }
 
 @media (max-width: 40rem) {
@@ -138,5 +213,12 @@ textarea:focus-visible {
 
     table {
         font-size: 0.875rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #menu a,
+    a.cta {
+        transition: none;
     }
 }

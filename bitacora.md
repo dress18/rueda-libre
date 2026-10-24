@@ -161,3 +161,45 @@ mostrar `font-family` y `color` heredados de `body`, y **Computed** debe mostrar
 
 El color calculado del párrafo también coincide con el de `body`
 (`rgb(20, 33, 61)`), confirmando la herencia de `color`.
+
+### Cascada y especificidad de la navegación
+
+La regla inicial del compañero para el menú es `#menu a`, con especificidad
+`(1, 0, 1)` (un ID, cero clases/pseudoclases y un elemento). La regla
+`.activo` tiene especificidad `(0, 1, 0)` (cero ID, una clase y cero elementos).
+Por eso `#menu a` gana para `color`: en **Styles** el color de `.activo` queda
+tachado, aunque `font-weight` sí se aplica porque el menú no lo declara.
+
+Se conserva `.activo` y se añade `#menu a.activo`, cuya especificidad es
+`(1, 1, 1)`, para que el verde de la página actual venza al gris de `#menu a`.
+No se usa `!important` ni estilos en línea. El menú tiene fondo Crema, por lo
+que Gris Asfalto y Verde Ruta conservan sus contrastes aprobados. Comprueba la
+cascada seleccionando el enlace actual en **Styles**: la corrección específica
+debe ganar para `color`; usa `:hov` para forzar `:hover` y `:focus`.
+
+Los estados del menú usan `header nav #menu a:hover` y
+`header nav #menu a:focus`, con especificidad `(1, 1, 3)`, para que el estado
+interactivo también venza al selector del enlace actual.
+
+### Prueba de interacción y teclado
+
+Forcé `:hover` mediante el protocolo CSS del navegador y revisé el estado
+visual: el elemento del menú y el CTA cambian a fondo Naranja Pedal con texto
+Azul Noche. El botón usa el mismo par al pasar el puntero; los campos muestran
+borde Verde Ruta. En reposo, los enlaces del menú usan Gris Asfalto y el enlace
+actual Verde Ruta sobre Crema.
+
+Recorrí con `Tab` las tres páginas: inicio y tarifas tienen 6 y 5 destinos de
+foco distintos; reservas tiene 18, incluidos los controles del formulario.
+Los destinos muestran contorno Azul Noche de 3 px y halo Crema. El selector de
+fecha también tiene una regla de foco específica para reforzar el indicador
+cuando el navegador enfoca sus segmentos nativos. En Chrome, al recorrer con
+`Tab` los segmentos internos de la fecha, el segmento activo aparece
+seleccionado; en ese subestado el contorno CSS puede calcularse como `none`,
+pero el indicador nativo de selección permanece visible.
+
+Se añadieron estados para menú, enlaces CTA, botón y campos. El foco usa un
+contorno Azul Noche y un halo Crema para seguir visible tanto sobre el fondo
+claro como dentro del encabezado oscuro. Los estados hover/focus del menú y CTA
+usan Azul Noche sobre Naranja Pedal; el CTA en reposo usa Blanco sobre Verde
+Ruta. Los campos muestran borde Verde Ruta al pasar el puntero.
