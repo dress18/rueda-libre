@@ -72,7 +72,7 @@ genérico para aplicar estructura o presentación.
 
 ### Decisiones de controles del formulario de reserva
 
-- El número de documento usa un campo de texto, no uno numérico: porquecon este campo no se van a hacer operaciones.
+- El número de documento usa un campo de texto, no uno numérico, porque con los datos obtenidos en este campo no se van a hacer operaciones
 - El correo electrónico usa `type="email"` para que el navegador compruebe
   que tenga un formato de correo antes de enviar el formulario.
 - La fecha usa `type="date"` para ofrecer un selector de fecha y recibir un
@@ -96,8 +96,53 @@ genérico para aplicar estructura o presentación.
 
 ### Recorrido de teclado
 
-El formulario mantiene el orden de foco del documento: datos personales,
-fecha y opciones de alquiler, confirmación y botón de envío. Las opciones
-del plan comparten un grupo de radio para recorrerlas con las flechas; la
-aceptación de políticas se activa con la barra espaciadora.
-Resultado del recorrido completo por teclado: pendiente de ejecutar en navegador.
+Prueba realizada en Chrome con teclado: `Tab` recorre Inicio, Tarifas y rutas,
+Reservas, el enlace a tarifas y después los controles del formulario en orden
+de lectura. El control de fecha expone sus segmentos internos durante el
+recorrido; al completar la fecha el foco continúa hacia tipo de bicicleta.
+`Shift + Tab` desde el botón vuelve a la casilla de políticas. Las flechas
+cambian la opción del plan, la barra espaciadora marca las políticas y `Enter`
+envía el formulario válido por `POST` al punto de prueba local. No se añadieron
+índices `tabindex` ni controles que alteren el orden natural.
+
+### Auditoría de accesibilidad de las páginas
+
+| Página | Hallazgo | Corrección o resultado |
+|---|---|---|
+| Inicio | El enlace interno decía «Encuéntranos aquí», texto poco claro fuera de contexto | Cambiado a «Ir a la sección de contacto»; conserva el destino `#encuentranos` |
+| Inicio | Imágenes con alternativas descriptivas; jerarquía h1-h2-h3 coherente; `lang="es"` presente | Sin cambios necesarios |
+| Tarifas | El logo tiene alternativa «Logo de Rueda Libre»; jerarquía h1-h2-h3 coherente; enlaces con texto descriptivo; `lang="es"` presente | Sin cambios necesarios |
+| Reservas | Jerarquía h1-h2 coherente; navegación y enlace a tarifas descriptivos; `lang="es"` presente | Sin cambios necesarios |
+| Las tres páginas | Recorrido con teclado y orden de foco | Orden nativo comprobado en Chrome; formulario recorre datos, alquiler, confirmación y envío |
+
+### Contraste y mapa de uso de color
+
+Se evaluaron en WebAIM Contrast Checker. Criterios WCAG AA: texto normal,
+mínimo 4.5:1; texto grande, mínimo 3:1.
+
+| Texto (primer plano) | Fondo | Contraste | Clasificación |
+|---|---|---:|---|
+| Blanco `#FFFFFF` | Verde Ruta `#1E7A4F` | 5.31:1 | Apta para texto normal |
+| Blanco `#FFFFFF` | Naranja Pedal `#F39A2B` | 2.21:1 | No apta |
+| Azul Noche `#14213D` | Naranja Pedal `#F39A2B` | 7.20:1 | Apta para texto normal |
+| Azul Noche `#14213D` | Crema `#FAF6EF` | 14.82:1 | Apta para texto normal |
+| Gris Asfalto `#5B6470` | Crema `#FAF6EF` | 5.56:1 | Apta para texto normal |
+| Verde Ruta `#1E7A4F` | Crema `#FAF6EF` | 4.93:1 | Apta para texto normal |
+| Naranja Pedal `#F39A2B` | Crema `#FAF6EF` | 2.05:1 | No apta |
+| Blanco `#FFFFFF` | Azul Noche `#14213D` | 15.97:1 | Apta para texto normal |
+
+No hubo combinaciones aptas solo para texto grande: las que pasan superan
+4.5:1 y las otras dos no alcanzan 3:1.
+
+#### Mapa de uso de color
+
+- **Fondo general:** Crema `#FAF6EF`.
+- **Texto principal y títulos:** Azul Noche `#14213D` sobre Crema; ambos
+  alcanzan contraste para texto normal.
+- **Texto secundario:** Gris Asfalto `#5B6470` sobre Crema.
+- **Encabezado oscuro:** fondo Azul Noche con texto blanco.
+- **Enlaces:** Verde Ruta sobre Crema.
+- **Botón principal:** fondo Verde Ruta con texto blanco.
+- **Botón secundario y destacados con texto:** fondo Naranja Pedal con texto
+  Azul Noche. Evitar texto blanco sobre Naranja Pedal y texto Naranja Pedal
+  sobre Crema; ambas combinaciones fallan incluso para texto grande.
