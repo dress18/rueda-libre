@@ -198,6 +198,15 @@ cuando el navegador enfoca sus segmentos nativos. En Chrome, al recorrer con
 seleccionado; en ese subestado el contorno CSS puede calcularse como `none`,
 pero el indicador nativo de selección permanece visible.
 
+### Box model de las tarjetas
+
+En DevTools **Computed**, medí una tarjeta de servicios con ancho declarado de
+`20rem` (320px), relleno de `1rem` por lado (16px) y borde de `1px` por lado.
+Antes, con `box-sizing: content-box`, el ancho total era **354px**:
+320 + 16 + 16 + 1 + 1. Después de cambiar a `box-sizing: border-box`, el ancho
+total fue **320px**; el relleno y el borde quedan incluidos en el ancho
+declarado.
+
 Se añadieron estados para menú, enlaces CTA, botón y campos. El foco usa un
 contorno Azul Noche y un halo Crema para seguir visible tanto sobre el fondo
 claro como dentro del encabezado oscuro. Los estados hover/focus del menú y CTA
