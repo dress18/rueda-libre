@@ -1,0 +1,142 @@
+:root {
+    --color-cream: #FAF6EF;
+    --color-night-blue: #14213D;
+    --color-asphalt-gray: #5B6470;
+    --color-route-green: #1E7A4F;
+    --color-pedal-orange: #F39A2B;
+    --font-body: "Open Sans", Arial, sans-serif;
+    --font-heading: "Montserrat", Arial, sans-serif;
+    --space-small: 0.5rem;
+    --space-medium: 1rem;
+    --space-large: 2rem;
+}
+
+body {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: var(--space-medium);
+    color: var(--color-night-blue);
+    background-color: var(--color-cream);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+}
+
+header,
+footer {
+    padding: var(--space-large);
+    color: var(--color-cream);
+    background-color: var(--color-night-blue);
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-medium);
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    color: var(--color-route-green);
+}
+
+header a,
+footer a {
+    color: var(--color-cream);
+}
+
+main section {
+    margin-block: var(--space-large);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+aside {
+    padding: var(--space-medium);
+    color: var(--color-night-blue);
+    background-color: var(--color-pedal-orange);
+}
+
+aside a {
+    color: var(--color-night-blue);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-block: var(--space-medium);
+}
+
+caption {
+    padding: var(--space-small);
+    color: var(--color-night-blue);
+    background-color: var(--color-pedal-orange);
+}
+
+th,
+td {
+    padding: var(--space-small);
+    border: 1px solid var(--color-asphalt-gray);
+    text-align: left;
+}
+
+th {
+    color: var(--color-cream);
+    background-color: var(--color-night-blue);
+}
+
+input,
+select,
+textarea {
+    max-width: 100%;
+    padding: var(--space-small);
+    color: var(--color-night-blue);
+    background-color: var(--color-cream);
+    font: inherit;
+}
+
+button {
+    padding: var(--space-small) var(--space-medium);
+    border: 0;
+    color: var(--color-cream);
+    background-color: var(--color-route-green);
+    font: inherit;
+    cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--color-pedal-orange);
+    outline-offset: 2px;
+}
+
+@media (max-width: 40rem) {
+    body {
+        padding: var(--space-small);
+    }
+
+    header,
+    footer {
+        padding: var(--space-medium);
+    }
+
+    table {
+        font-size: 0.875rem;
+    }
+}

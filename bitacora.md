@@ -147,3 +147,17 @@ No hubo combinaciones aptas solo para texto grande: las que pasan superan
 - **Botón secundario y destacados con texto:** fondo Naranja Pedal con texto
   Azul Noche. Evitar texto blanco sobre Naranja Pedal y texto Naranja Pedal
   sobre Crema; ambas combinaciones fallan incluso para texto grande.
+
+### Comprobación de herencia en DevTools
+
+En `index.html`, comprobé los estilos calculados de un párrafo dentro de
+`main`. Para contrastarlo en DevTools, selecciona ese párrafo: **Styles** debe
+mostrar `font-family` y `color` heredados de `body`, y **Computed** debe mostrar:
+
+| Propiedad | Valor calculado | Comprobación |
+|---|---|---|
+| `font-family` | `"Open Sans", Arial, sans-serif` en el párrafo y en `body` | Se hereda |
+| `margin` | `16px 0px` en el párrafo; `0px 99.5px` en `body` | No se hereda |
+
+El color calculado del párrafo también coincide con el de `body`
+(`rgb(20, 33, 61)`), confirmando la herencia de `color`.
