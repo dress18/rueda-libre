@@ -1,3 +1,4 @@
+/* Variables */
 :root {
     --color-cream: #FAF6EF;
     --color-white: #FFFFFF;
@@ -10,8 +11,10 @@
     --space-small: 0.5rem;
     --space-medium: 1rem;
     --space-large: 2rem;
+    --space-floating-clearance: 7rem;
 }
 
+/* Base and layout */
 *,
 *::before,
 *::after {
@@ -21,7 +24,7 @@
 body {
     max-width: 72rem;
     margin: 0 auto;
-    padding: var(--space-medium);
+    padding: var(--space-medium) var(--space-medium) var(--space-floating-clearance);
     color: var(--color-night-blue);
     background-color: var(--color-cream);
     font-family: var(--font-body);
@@ -44,6 +47,17 @@ main {
     margin: 0 auto;
 }
 
+main section {
+    margin-block: var(--space-large);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Shared header and footer */
 header,
 footer {
     padding: var(--space-large);
@@ -51,6 +65,27 @@ footer {
     background-color: var(--color-night-blue);
 }
 
+header h1 {
+    margin: 0;
+}
+
+.brand {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+header .tagline {
+    max-width: 48rem;
+    margin-block: var(--space-medium);
+}
+
+footer address {
+    margin-bottom: var(--space-small);
+    font-style: normal;
+}
+
+/* Navigation */
 #menu {
     margin: var(--space-medium) 0 0;
     padding: var(--space-small);
@@ -81,63 +116,68 @@ footer {
     color: var(--color-route-green);
 }
 
-header nav #menu a:hover {
-    color: var(--color-night-blue);
-    background-color: var(--color-pedal-orange);
-    text-decoration: underline;
-}
-
+header nav #menu a:hover,
 header nav #menu a:focus {
     color: var(--color-night-blue);
     background-color: var(--color-pedal-orange);
     text-decoration: underline;
 }
 
+/* Links and fixed actions */
 a {
     color: var(--color-route-green);
 }
 
-header a,
+header a:not(.cta),
 footer a {
     color: var(--color-white);
 }
 
-a.cta {
+a.cta,
+button,
+.whatsapp {
     display: inline-block;
-    margin-top: var(--space-medium);
     padding: var(--space-small) var(--space-medium);
+    border: 0;
     border-radius: 0.25rem;
     color: var(--color-white);
     background-color: var(--color-route-green);
+    font: inherit;
     font-weight: 600;
     text-decoration: none;
+    cursor: pointer;
     transition: color 150ms ease, background-color 150ms ease;
 }
 
-header a.cta:hover {
+a.cta {
+    margin-top: var(--space-medium);
+}
+
+button {
+    padding: var(--space-medium) var(--space-large);
+}
+
+.whatsapp {
+    position: fixed;
+    right: var(--space-medium);
+    bottom: var(--space-medium);
+    z-index: 10;
+    box-shadow: 0 0 0 0.25rem var(--color-cream);
+}
+
+a.cta:hover,
+a.cta:focus,
+button:hover,
+.whatsapp:hover,
+.whatsapp:focus {
     color: var(--color-night-blue);
     background-color: var(--color-pedal-orange);
     text-decoration: underline;
 }
 
-header a.cta:focus {
-    color: var(--color-night-blue);
-    background-color: var(--color-pedal-orange);
-    text-decoration: underline;
-}
-
-main section {
-    margin-block: var(--space-large);
-}
-
+/* Service cards and callouts */
 #quienes-somos {
     min-height: 60vh;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
 }
 
 #servicios {
@@ -164,6 +204,26 @@ img {
     width: 100%;
 }
 
+.service-electric {
+    position: relative;
+}
+
+.service-electric h3 {
+    margin-top: var(--space-large);
+}
+
+.badge {
+    position: absolute;
+    top: var(--space-small);
+    left: var(--space-small);
+    padding: var(--space-small);
+    border-radius: 0.25rem;
+    color: var(--color-night-blue);
+    background-color: var(--color-pedal-orange);
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
 aside {
     padding: var(--space-medium);
     color: var(--color-night-blue);
@@ -174,6 +234,7 @@ aside a {
     color: var(--color-night-blue);
 }
 
+/* Tables */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -208,6 +269,7 @@ th {
     background-color: var(--color-night-blue);
 }
 
+/* Reservation form */
 input,
 select,
 textarea {
@@ -272,21 +334,6 @@ form small {
     margin-top: var(--space-small);
 }
 
-button {
-    padding: var(--space-medium) var(--space-large);
-    border: 0;
-    border-radius: var(--space-small);
-    color: var(--color-white);
-    background-color: var(--color-route-green);
-    font: inherit;
-    cursor: pointer;
-}
-
-button:hover {
-    color: var(--color-night-blue);
-    background-color: var(--color-pedal-orange);
-}
-
 input:hover,
 select:hover,
 textarea:hover {
@@ -304,15 +351,10 @@ textarea:focus,
     box-shadow: 0 0 0 0.3125rem var(--color-cream);
 }
 
-input[type="date"]:focus {
-    outline: 0.1875rem solid var(--color-night-blue);
-    outline-offset: 0.125rem;
-    box-shadow: 0 0 0 0.3125rem var(--color-cream);
-}
-
+/* Responsive layout */
 @media (max-width: 40rem) {
     body {
-        padding: var(--space-small);
+        padding: var(--space-small) var(--space-small) var(--space-floating-clearance);
     }
 
     header,
@@ -332,11 +374,17 @@ input[type="date"]:focus {
     #servicios {
         grid-template-columns: 1fr;
     }
+
+    .whatsapp {
+        right: var(--space-small);
+        bottom: var(--space-small);
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
     #menu a,
-    a.cta {
+    a.cta,
+    .whatsapp {
         transition: none;
     }
 }

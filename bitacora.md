@@ -67,9 +67,9 @@ paginas/reservas.html
 └ footer: contacto + derechos reservados
 ```
 
-No se conservan `div` ni `span`: los elementos actuales pueden expresarse
-con regiones o elementos HTML semánticos, y no se necesita un contenedor
-genérico para aplicar estructura o presentación.
+La estructura principal usa regiones semánticas. Las tablas tienen un
+contenedor `div.table-scroll` con `role="region"`, nombre accesible y foco de
+teclado para poder desplazarlas horizontalmente en pantallas estrechas.
 
 ### Decisiones de controles del formulario de reserva
 
@@ -212,3 +212,22 @@ contorno Azul Noche y un halo Crema para seguir visible tanto sobre el fondo
 claro como dentro del encabezado oscuro. Los estados hover/focus del menú y CTA
 usan Azul Noche sobre Naranja Pedal; el CTA en reposo usa Blanco sobre Verde
 Ruta. Los campos muestran borde Verde Ruta al pasar el puntero.
+
+### Cierre de semana: Rueda Libre v1.0
+
+| MiniReto | Construcción integrada |
+|---|---|
+| 1. Kilómetro 0 | Repositorio, carpetas, página inicial y bitácora. |
+| 2. Vitrina | Presentación, servicios, listas, imágenes y enlaces de inicio. |
+| 3. Tarifas claras | Tablas de alquiler y recorridos, con navegación relativa. |
+| 4. Sitio navegable | Páginas de tarifas y reservas, menú y pie comunes. |
+| 5. Estructura con significado | Regiones semánticas y jerarquía de encabezados. |
+| 6. Formulario | Datos de contacto, alquiler, planes y confirmación. |
+| 7. Reservas sin errores | Validación nativa y prueba de navegación por teclado. |
+| 8. Accesible y publicado | Revisión de accesibilidad, mapa de contraste y primera publicación. |
+| 9. Identidad | CSS externo, Montserrat, Open Sans y variables de color/espaciado. |
+| 10. Navegación con estados | Página activa, hover, foco, CTA y cascada documentada. |
+| 11. Modelo de caja | `border-box`, tarjetas, tablas, formulario y diseño adaptable. |
+| 12. Lanzamiento | Etiqueta «Nuevo», WhatsApp fijo, encabezados/pies comunes y cierre visual. |
+
+
