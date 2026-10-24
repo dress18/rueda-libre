@@ -53,16 +53,103 @@
             </p>
             <a href="tarifas.html">Ver tarifas y rutas</a>
         </section>
+        <section id="reservar">
+            <h2>Formulario de reserva</h2>
+            <form method="post">
+                <fieldset>
+                    <legend>Tus datos</legend>
+
+                    <p>
+                        <label for="nombre-completo">Nombre completo</label>
+                        <input type="text" id="nombre-completo" name="nombre_completo" autocomplete="name" required>
+                    </p>
+                    <p>
+                        <label for="documento">Número de documento</label>
+                        <input type="text" id="documento" name="documento" autocomplete="off" required>
+                    </p>
+                    <p>
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" name="correo" autocomplete="email" required>
+                    </p>
+                    <p>
+                        <label for="celular">Celular</label>
+                        <input type="tel" id="celular" name="celular" autocomplete="tel" required>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Tu alquiler</legend>
+
+                    <p>
+                        <label for="fecha-alquiler">Fecha del alquiler</label>
+                        <input type="date" id="fecha-alquiler" name="fecha_alquiler" required>
+                    </p>
+                    <p>
+                        <label for="tipo-bicicleta">Tipo de bicicleta</label>
+                        <select id="tipo-bicicleta" name="tipo_bicicleta" required>
+                            <option value="" selected disabled>Elige una bicicleta</option>
+                            <option value="urbana">Urbana</option>
+                            <option value="montana">Montaña</option>
+                            <option value="electrica">Eléctrica</option>
+                        </select>
+                    </p>
+                    <fieldset>
+                        <legend>Plan</legend>
+                        <p>
+                            <input type="radio" id="plan-una-hora" name="plan"
+                                   value="1_hora" required>
+                            <label for="plan-una-hora">1 hora</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="plan-medio-dia" name="plan"
+                                   value="medio_dia">
+                            <label for="plan-medio-dia">Medio día</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="plan-dia-completo" name="plan"
+                                   value="dia_completo">
+                            <label for="plan-dia-completo">Día completo</label>
+                        </p>
+                    </fieldset>
+                    <p>
+                        <label for="cantidad-bicicletas">Cantidad de bicicletas</label>
+                        <input type="number" id="cantidad-bicicletas" name="cantidad_bicicletas"
+                               min="1" step="1" required>
+                    </p>
+                    <p>
+                        <label for="recorrido">Recorrido guiado</label>
+                        <select id="recorrido" name="recorrido" required>
+                            <option value="ninguno" selected>Ninguno</option>
+                            <option value="rio_y_parques">Río y Parques</option>
+                            <option value="sabores_de_barrio">Sabores de Barrio</option>
+                            <option value="reto_las_palmas">Reto Las Palmas</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="comentarios">Comentarios</label>
+                        <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Confirmación</legend>
+                    <p>
+                        <input type="checkbox" id="acepta-politicas" name="acepta_politicas" value="si" required>
+                        <label for="acepta-politicas">
+                            Acepto las políticas de alquiler.
+                        </label>
+                    </p>
+                </fieldset>
+
+                <button type="submit">Enviar reserva</button>
+            </form>
+        </section>
     </main>
 
     <footer>
-        <p>
-            Rueda Libre |
-            <a href="mailto:hola@ruedalibre.example">
-                hola@ruedalibre.example
-            </a> |
-            &copy; 2026
-        </p>
+            <address>
+                Rueda Libre | <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a> | &copy; 2026
+            </address>
     </footer>
 
 </body>

@@ -69,3 +69,11 @@ paginas/reservas.html
 No se conservan `div` ni `span`: los elementos actuales pueden expresarse
 con regiones o elementos HTML semánticos, y no se necesita un contenedor
 genérico para aplicar estructura o presentación.
+
+### Decisiones de controles del formulario de reserva
+
+- El número de documento usa un campo de texto, no uno numérico: porquecon este campo no se van a hacer operaciones.
+- El correo electrónico usa `type="email"` para que el navegador compruebe
+  que tenga un formato de correo antes de enviar el formulario.
+- La fecha usa `type="date"` para ofrecer un selector de fecha y recibir un
+  valor estructurado en lugar de texto libre.
