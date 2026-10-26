@@ -13,16 +13,18 @@
 </head>
 <body>
     <header>
-        <p class="brand">Rueda Libre</p>
+        <div class="header-top">
+            <p class="brand">Rueda Libre</p>
+            <nav aria-label="Navegación principal">
+                <ul id="menu">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="./tarifas.html">Tarifas y rutas</a></li>
+                    <li><a href="./reservas.html" class="activo" aria-current="page">Reservas</a></li>
+                </ul>
+            </nav>
+        </div>
         <h1>Reserva tu bicicleta</h1>
         <p class="tagline">Elige tu bicicleta y prepara tu próxima ruta.</p>
-        <nav aria-label="Navegación principal">
-            <ul id="menu">
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="./tarifas.html">Tarifas y rutas</a></li>
-                <li><a href="./reservas.html" class="activo" aria-current="page">Reservas</a></li>
-            </ul>
-        </nav>
         <a class="cta" href="#reservar">Reservar ahora</a>
     </header>
 
@@ -151,8 +153,20 @@
     </main>
 
     <footer>
-            <address>Rueda Libre | <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a> | &copy; 2026</address>
+        <section class="footer-block">
+            <h2>Rueda Libre</h2>
+            <p>&copy; 2026</p>
+        </section>
+        <section class="footer-block">
+            <h2>Contacto</h2>
+            <address><a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></address>
             <a href="../index.html">Inicio</a>
+        </section>
+        <section class="footer-block">
+            <h2>Horario</h2>
+            <p>Lunes a viernes: 8:00 a. m. a 6:00 p. m.</p>
+            <p>Sábados y domingos: 7:00 a. m. a 5:00 p. m.</p>
+        </section>
     </footer>
         <a class="whatsapp" href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a>
 </body>

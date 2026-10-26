@@ -14,7 +14,6 @@
     --space-floating-clearance: 7rem;
 }
 
-/* Base and layout */
 *,
 *::before,
 *::after {
@@ -57,12 +56,23 @@ img {
     height: auto;
 }
 
-/* Shared header and footer */
 header,
 footer {
     padding: var(--space-large);
     color: var(--color-white);
     background-color: var(--color-night-blue);
+}
+
+.header-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-medium);
+}
+
+header nav {
+    max-width: 100%;
 }
 
 header h1 {
@@ -80,22 +90,40 @@ header .tagline {
     margin-block: var(--space-medium);
 }
 
-footer address {
-    margin-bottom: var(--space-small);
+footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-large);
+}
+
+.footer-block {
+    flex: 1 1 12rem;
+}
+
+.footer-block h2 {
+    margin-top: 0;
+    font-size: 1.125rem;
+}
+
+.footer-block p {
+    margin-block: var(--space-small);
+}
+
+.footer-block address {
     font-style: normal;
 }
 
-/* Navigation */
 #menu {
-    margin: var(--space-medium) 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-small);
+    margin: 0;
     padding: var(--space-small);
     background-color: var(--color-cream);
     list-style: none;
-}
-
-#menu li {
-    display: inline-block;
-    margin-right: var(--space-small);
 }
 
 #menu a {
@@ -123,7 +151,6 @@ header nav #menu a:focus {
     text-decoration: underline;
 }
 
-/* Links and fixed actions */
 a {
     color: var(--color-route-green);
 }
@@ -175,7 +202,6 @@ button:hover,
     text-decoration: underline;
 }
 
-/* Service cards and callouts */
 #quienes-somos {
     min-height: 60vh;
 }
@@ -234,7 +260,6 @@ aside a {
     color: var(--color-night-blue);
 }
 
-/* Tables */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -269,7 +294,6 @@ th {
     background-color: var(--color-night-blue);
 }
 
-/* Reservation form */
 input,
 select,
 textarea {
@@ -351,7 +375,6 @@ textarea:focus,
     box-shadow: 0 0 0 0.3125rem var(--color-cream);
 }
 
-/* Responsive layout */
 @media (max-width: 40rem) {
     body {
         padding: var(--space-small) var(--space-small) var(--space-floating-clearance);

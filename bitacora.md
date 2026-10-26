@@ -230,4 +230,21 @@ Ruta. Los campos muestran borde Verde Ruta al pasar el puntero.
 | 11. Modelo de caja | `border-box`, tarjetas, tablas, formulario y diseño adaptable. |
 | 12. Lanzamiento | Etiqueta «Nuevo», WhatsApp fijo, encabezados/pies comunes y cierre visual. |
 
+### Distribución flexible del encabezado y el pie
 
+Se agrupó la marca y la navegación en `.header-top`, que usa Flexbox para
+colocarlas en extremos opuestos y centrarlas verticalmente. La lista `#menu`
+también usa Flexbox, `gap` y `flex-wrap`; se eliminaron el margen entre los
+elementos y el `inline-block` que separaba los enlaces.
+
+El pie común ahora tiene tres bloques: marca, contacto y horario. En ventanas
+anchas se muestran en fila, alineados por arriba y separados con `gap`. Al
+estrechar la ventana, los enlaces del menú pueden pasar a otra línea y los
+bloques del pie se acomodan en filas adicionales cuando ya no caben. Las tres
+páginas comparten estas reglas mediante `css/styles.css`.
+
+En la comprobación visual con la ventana a 1280 px, la marca y la navegación
+quedaron en extremos opuestos y centradas verticalmente; los tres bloques del
+pie quedaron en una sola fila, con 375 px, el enlace «Reservas» pasó a una
+segunda línea y los bloques del pie se apilaron. No se observó desbordamiento
+horizontal.
