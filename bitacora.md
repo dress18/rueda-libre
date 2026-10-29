@@ -131,3 +131,16 @@ Resultados consultados en WebAIM Contrast Checker. Se considera texto normal des
 - Menú: `#menu` es un contenedor flexible con `gap` y `flex-wrap: wrap`; se eliminaron los márgenes y el `inline-block` de la semana 1.
 - Pie: tres bloques (marca, contacto y horario) en fila con `flex-direction: row`, `justify-content: space-between`, `align-items: flex-start` y `gap`.
 - Al estrechar la ventana: en el encabezado los elementos pasan a otra línea y los enlaces del menú bajan de línea en lugar de desbordarse; en el pie los bloques bajan uno bajo otro cuando ya no caben en la fila.
+
+### Cuadrícula de la flota
+- `.cuadricula-flota` usa `display: grid`, `grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr))` y `gap: var(--space-3)`; no hay media queries. Cada tarjeta es un `article` con Flexbox en columna (`justify-content: space-between`) y el enlace "Reservar" al final.
+- Se agregó el séptimo modelo (Tándem) solo en el HTML, sin tocar el CSS: la cuadrícula lo acomodó sola.
+- Columnas observadas en modo dispositivo:
+
+| Ancho | Columnas |
+| --- | ---: |
+| 1280 px | 4 |
+| 900 px | 3 |
+| 500 px | 1 |
+
+- En cada fila las tarjetas tienen la misma altura y los enlaces "Reservar" quedan alineados al final.

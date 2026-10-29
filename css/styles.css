@@ -162,6 +162,32 @@ main {
     height: auto;
 }
 
+.cuadricula-flota {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: var(--space-3);
+}
+
+#flota article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--space-2);
+    border: 1px solid var(--color-asphalt-gray);
+    border-radius: var(--space-1);
+}
+
+#flota article img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#flota article .cta-reserva {
+    align-self: flex-start;
+    margin-top: auto;
+}
+
 table {
     width: 100%;
     margin-block: var(--space-2);
