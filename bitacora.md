@@ -26,3 +26,8 @@ Roles:
 | paginas/reservas.html | Inicio | ../index.html |
 | paginas/reservas.html | Tarifas y rutas | tarifas.html |
 | paginas/reservas.html | Reservas | reservas.html |
+
+### Formulario de reservas
+- `email` para el correo electrónico: el navegador puede validar el formato antes del envío.
+- `radio` para el tipo de bicicleta: las opciones comparten `name="tipo_bicicleta"` y permiten seleccionar solo una.
+- `date` para la fecha de recogida: ofrece un selector de fecha y evita entradas con formato arbitrario.
