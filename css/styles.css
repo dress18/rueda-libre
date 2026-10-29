@@ -47,6 +47,28 @@ footer {
     background-color: var(--color-night-blue);
     color: var(--color-white);
     padding: var(--space-2);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+header {
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav {
+    margin-inline-start: auto;
+}
+
+footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+footer > div {
+    flex: 1 1 15rem;
 }
 
 header :is(h1, h2, h3, h4, h5, h6),
@@ -63,17 +85,18 @@ footer a {
     color: var(--color-white);
 }
 
-/* Navegación */
 #menu {
     background-color: var(--color-cream);
     list-style: none;
     margin: 0;
     padding: var(--space-1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
 }
 
 #menu a {
     color: var(--color-asphalt-gray);
-    display: inline-block;
     padding: var(--space-1);
 }
 
@@ -98,11 +121,6 @@ footer a {
     outline-offset: 0.125rem;
 }
 
-#menu li {
-    display: inline-block;
-}
-
-/* Componentes */
 main {
     width: 100%;
     max-width: 70rem;

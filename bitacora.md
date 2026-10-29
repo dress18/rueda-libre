@@ -124,3 +124,10 @@ Resultados consultados en WebAIM Contrast Checker. Se considera texto normal des
 - CSS y cascada: hoja externa compartida, variables de marca, Google Fonts, herencia, estados de enlaces/foco y conflicto de especificidad resueltos.
 - Box model y posicionamiento: `border-box`, tarjetas, tablas, formulario, etiqueta “Nuevo” anclada y WhatsApp fijo sin cubrir el pie.
 - Mejoraría: conectar el POST del formulario a un servicio real de reservas y sincronizar la rama local con la fuente configurada en GitHub Pages cuando se autorice publicar.
+
+
+### Flexbox en encabezado y pie
+- Encabezado: `display: flex`, `justify-content: space-between` y `align-items: center`; el nombre queda a la izquierda y el menú a la derecha, centrados verticalmente entre sí.
+- Menú: `#menu` es un contenedor flexible con `gap` y `flex-wrap: wrap`; se eliminaron los márgenes y el `inline-block` de la semana 1.
+- Pie: tres bloques (marca, contacto y horario) en fila con `flex-direction: row`, `justify-content: space-between`, `align-items: flex-start` y `gap`.
+- Al estrechar la ventana: en el encabezado los elementos pasan a otra línea y los enlaces del menú bajan de línea en lugar de desbordarse; en el pie los bloques bajan uno bajo otro cuando ya no caben en la fila.
