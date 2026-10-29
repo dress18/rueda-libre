@@ -14,6 +14,12 @@
     --space-5: 3rem;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     background-color: var(--color-cream);
     color: var(--color-night-blue);
@@ -62,10 +68,182 @@ footer a {
     color: var(--color-white);
 }
 
+#menu {
+    background-color: var(--color-cream);
+    list-style: none;
+    margin: 0;
+    padding: var(--space-1);
+}
+
+#menu a {
+    color: var(--color-asphalt-gray);
+    display: inline-block;
+    padding: var(--space-1);
+}
+
+.activo {
+    color: var(--color-route-green);
+    font-weight: 600;
+}
+
+#menu a.activo {
+    color: var(--color-route-green);
+}
+
+#menu a:hover {
+    background-color: var(--color-route-green);
+    color: var(--color-white);
+}
+
+#menu a:focus {
+    background-color: var(--color-night-blue);
+    color: var(--color-white);
+    outline: 0.1875rem solid var(--color-night-blue);
+    outline-offset: 0.125rem;
+}
+
+.cta-reserva {
+    background-color: var(--color-route-green);
+    color: var(--color-white);
+    display: inline-block;
+    font-weight: 600;
+    padding: var(--space-1) var(--space-2);
+    text-decoration: none;
+}
+
+.cta-reserva:hover,
+.cta-reserva:focus {
+    background-color: var(--color-night-blue);
+    color: var(--color-white);
+    text-decoration: underline;
+}
+
 button {
     background-color: var(--color-route-green);
     color: var(--color-white);
     font-family: var(--font-body);
+}
+
+button:hover,
+button:focus {
+    background-color: var(--color-night-blue);
+    color: var(--color-white);
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: var(--color-route-green);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 0.1875rem solid var(--color-night-blue);
+    outline-offset: 0.125rem;
+}
+
+a:focus,
+button:focus {
+    outline: 0.1875rem solid var(--color-night-blue);
+    outline-offset: 0.125rem;
+}
+
+header .cta-reserva:focus {
+    outline-color: var(--color-cream);
+}
+
+header > p a:focus,
+footer a:focus {
+    outline-color: var(--color-cream);
+}
+
+main {
+    width: 100%;
+    max-width: 70rem;
+    margin-inline: auto;
+    padding-inline: var(--space-2);
+}
+
+#quienes-somos {
+    min-height: 70vh;
+}
+
+#servicios article {
+    display: block;
+    width: 100%;
+    margin-block: var(--space-2);
+    padding: var(--space-2);
+    border: 1px solid var(--color-asphalt-gray);
+    border-radius: var(--space-1);
+}
+
+#servicios article img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+table {
+    width: 100%;
+    margin-block: var(--space-2);
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: var(--space-1);
+    border: 1px solid var(--color-night-blue);
+    text-align: left;
+}
+
+thead {
+    background-color: var(--color-night-blue);
+    color: var(--color-white);
+}
+
+#menu li {
+    display: inline-block;
+}
+
+form fieldset {
+    margin-block-end: var(--space-3);
+    padding: var(--space-2);
+    border: 1px solid var(--color-asphalt-gray);
+}
+
+form p {
+    margin-block: var(--space-2);
+}
+
+form label {
+    display: block;
+    margin-block-end: var(--space-1);
+}
+
+form input:not([type="radio"]):not([type="checkbox"]),
+form select,
+form textarea {
+    display: block;
+    width: 100%;
+    padding: var(--space-1);
+    border: 1px solid var(--color-night-blue);
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+    display: inline-block;
+}
+
+form input[type="radio"] + label,
+form input[type="checkbox"] + label {
+    display: inline-block;
+}
+
+form button {
+    display: inline-block;
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--color-route-green);
 }
 
 strong,

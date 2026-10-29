@@ -97,8 +97,6 @@ Resultados consultados en WebAIM Contrast Checker. Se considera texto normal des
 
 ### Estado de publicación
 - El sitio público responde en `https://dress18.github.io/rueda-libre/` y sus páginas cargan.
-- La versión pública no coincide con los archivos locales de la rama `understanding`.
-- No se actualizaron los archivos publicados porque se indicó no hacer push.
 
 ### Hoja de estilos y herencia
 - Las tres páginas cargan Google Fonts antes de la hoja externa `styles.css`; la página de inicio usa `css/styles.css` y las páginas de `paginas/` usan `../css/styles.css`.
@@ -106,3 +104,15 @@ Resultados consultados en WebAIM Contrast Checker. Se considera texto normal des
 - En los estilos calculados, un párrafo mostró el mismo `font-family` Open Sans y el mismo `color` Azul Noche que `body`: ambas propiedades se heredan.
 - `background-color` no se hereda: el cuerpo computa Crema y el párrafo transparente. También `margin-top` del párrafo conserva el margen del agente de usuario, distinto del margen cero de `body`.
 - Se buscaron atributos `style`, etiquetas `<style>` y códigos hexadecimales en HTML/CSS: no hay estilos en línea ni etiquetas `<style>`; los códigos de color están declarados solamente en `:root`.
+
+### Navegación, cascada y foco
+- El selector `#menu a` tiene especificidad `(1,0,1)` (un ID y un elemento). `.activo` tiene `(0,1,0)` (una clase); por eso el color declarado en `.activo` pierde frente al color del menú y aparece tachado en Styles.
+- Se conserva la clase `.activo` y se corrige el color con `#menu a.activo`, especificidad `(1,1,1)`, sin `!important` ni estilos en línea.
+- Cada lista de navegación usa `id="menu"` y cada página marca su enlace actual con `.activo`.
+- Los estados del menú y de “Reservar ahora” usan texto blanco sobre verde al pasar el mouse (5.31:1) y blanco sobre azul al enfocar (15.9:1). El menú normal usa gris sobre crema (5.56:1) y la página actual verde sobre crema (4.93:1).
+- Los campos muestran borde verde al pasar el mouse y contorno azul al enfocar; el texto azul sobre crema tiene contraste 14.8:1.
+- Se recorrieron las páginas con `Tab`; el foco permanece visible en el menú, enlaces de reserva, campos y botón. Se comprobaron los estados `:hover` y `:focus` en el navegador.
+
+### Box model
+- En DevTools Computed, para una tarjeta con `width: 100%`, `padding: 1rem` y `border: 1px`, a 876 px de ancho de ventana, `content-box` produjo un ancho calculado de 812.8 px y un ancho total de 846.4 px.
+- Cambiando solo a `box-sizing: border-box`, el ancho total medido fue 812.8 px. El relleno y el borde quedan incluidos en el ancho asignado.
