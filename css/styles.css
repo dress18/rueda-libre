@@ -1,0 +1,75 @@
+:root {
+    --color-route-green: #1E7A4F;
+    --color-pedal-orange: #F39A2B;
+    --color-night-blue: #14213D;
+    --color-cream: #FAF6EF;
+    --color-asphalt-gray: #5B6470;
+    --color-white: #FFFFFF;
+    --font-heading: "Montserrat", sans-serif;
+    --font-body: "Open Sans", sans-serif;
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+    --space-5: 3rem;
+}
+
+body {
+    background-color: var(--color-cream);
+    color: var(--color-night-blue);
+    font-family: var(--font-body);
+    font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-night-blue);
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+header,
+footer {
+    background-color: var(--color-night-blue);
+    color: var(--color-white);
+}
+
+header h1,
+header h2,
+header h3,
+header h4,
+header h5,
+header h6,
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+footer h5,
+footer h6 {
+    color: var(--color-white);
+}
+
+a {
+    color: var(--color-route-green);
+}
+
+header a,
+footer a {
+    color: var(--color-white);
+}
+
+button {
+    background-color: var(--color-route-green);
+    color: var(--color-white);
+    font-family: var(--font-body);
+}
+
+strong,
+label,
+th {
+    font-weight: 600;
+}

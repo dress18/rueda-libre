@@ -96,4 +96,13 @@ Resultados consultados en WebAIM Contrast Checker. Se considera texto normal des
 - Evitar texto blanco sobre Naranja Pedal y texto Naranja Pedal sobre Crema; ambos fallan incluso el contraste para texto grande.
 
 ### Estado de publicación
-- El sitio público responde en `https://dress18.github.io/rueda-libre/
+- El sitio público responde en `https://dress18.github.io/rueda-libre/` y sus páginas cargan.
+- La versión pública no coincide con los archivos locales de la rama `understanding`.
+- No se actualizaron los archivos publicados porque se indicó no hacer push.
+
+### Hoja de estilos y herencia
+- Las tres páginas cargan Google Fonts antes de la hoja externa `styles.css`; la página de inicio usa `css/styles.css` y las páginas de `paginas/` usan `../css/styles.css`.
+- En el navegador, Montserrat 700 y Open Sans 400/600 aparecieron como fuentes cargadas. Los títulos computan Montserrat 700 y los párrafos Open Sans 400.
+- En los estilos calculados, un párrafo mostró el mismo `font-family` Open Sans y el mismo `color` Azul Noche que `body`: ambas propiedades se heredan.
+- `background-color` no se hereda: el cuerpo computa Crema y el párrafo transparente. También `margin-top` del párrafo conserva el margen del agente de usuario, distinto del margen cero de `body`.
+- Se buscaron atributos `style`, etiquetas `<style>` y códigos hexadecimales en HTML/CSS: no hay estilos en línea ni etiquetas `<style>`; los códigos de color están declarados solamente en `:root`.
