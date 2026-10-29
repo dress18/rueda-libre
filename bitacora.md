@@ -58,3 +58,42 @@ Roles:
 - Las flechas cambiaron la opción de bicicleta a “Montaña”; `Shift+Tab` regresó del botón a políticas y comentarios.
 - La barra espaciadora desmarcó y volvió a marcar la aceptación de políticas.
 - `Enter` en “Enviar reserva” disparó el evento `submit` con todos los datos válidos. La prueba interceptó el envío para evitar un POST sin un servidor de reservas configurado.
+
+### Auditoría de accesibilidad
+| Página | Criterio | Hallazgo y corrección | Resultado |
+| --- | --- | --- | --- |
+| Inicio | Texto alternativo | Las tres imágenes informativas tienen descripciones del contenido; se precisaron para describir la portada, el anuncio de bicicleta y la escena de ruta. | Cumple |
+| Tarifas | Texto alternativo | El logotipo tiene `alt="Logo de Rueda Libre"`; no hay imágenes decorativas sin marcar. | Cumple |
+| Reservas | Texto alternativo | No hay imágenes que requieran texto alternativo. | Cumple |
+| Inicio | Encabezados | `h1` seguido por secciones `h2` y subsecciones `h3`, sin saltos. | Cumple |
+| Tarifas | Encabezados | `h1`, encabezados `h2` de sección y `h3` subordinado dentro de la sección informativa. | Cumple |
+| Reservas | Encabezados | `h1` seguido por encabezados `h2` para las secciones. | Cumple |
+| Inicio | Enlaces | “Encuéntranos aquí” no describía el destino fuera de contexto; se cambió a “Ir a la sección Encuéntranos”. | Corregido |
+| Tarifas y reservas | Enlaces | Los textos “Tarifas y rutas”, “Reservas”, “Ver tarifas y rutas” y “Volver a la página principal” describen sus destinos. | Cumple |
+| Las tres páginas | Idioma | Cada documento declara `lang="es"`. | Cumple |
+| Las tres páginas | Teclado | `Tab` recorre enlaces y contenido interactivo en orden de lectura; `Shift+Tab` vuelve en orden inverso. En reservas se probaron también flechas en radios, Espacio en políticas y Enter para enviar. | Cumple; no se detectaron trampas |
+
+### Contraste de la paleta
+Resultados consultados en WebAIM Contrast Checker. Se considera texto normal desde 4.5:1 y texto grande desde 3:1.
+
+| Texto | Fondo | Ratio | Clasificación |
+| --- | --- | ---: | --- |
+| Blanco `#FFFFFF` | Verde Ruta `#1E7A4F` | 5.31:1 | Apta para texto normal |
+| Blanco `#FFFFFF` | Naranja Pedal `#F39A2B` | 2.21:1 | No apta |
+| Azul Noche `#14213D` | Naranja Pedal `#F39A2B` | 7.20:1 | Apta para texto normal |
+| Azul Noche `#14213D` | Crema `#FAF6EF` | 14.8:1 | Apta para texto normal |
+| Gris Asfalto `#5B6470` | Crema `#FAF6EF` | 5.56:1 | Apta para texto normal |
+| Verde Ruta `#1E7A4F` | Crema `#FAF6EF` | 4.93:1 | Apta para texto normal |
+| Naranja Pedal `#F39A2B` | Crema `#FAF6EF` | 2.05:1 | No apta |
+| Blanco `#FFFFFF` | Azul Noche `#14213D` | 15.9:1 | Apta para texto normal |
+
+### Mapa de uso de color
+- Fondo general: Crema `#FAF6EF`.
+- Texto principal y títulos: Azul Noche `#14213D`; texto secundario: Gris Asfalto `#5B6470`.
+- Enlaces: Verde Ruta `#1E7A4F`, con subrayado visible y un indicador de foco contrastante.
+- Botón primario: Verde Ruta con texto blanco.
+- Botón secundario y destacados: Naranja Pedal con texto Azul Noche.
+- Evitar texto blanco sobre Naranja Pedal y texto Naranja Pedal sobre Crema; ambos fallan incluso el contraste para texto grande.
+
+### Estado de publicación
+- El sitio público responde en `https://dress18.github.io/rueda-libre/
