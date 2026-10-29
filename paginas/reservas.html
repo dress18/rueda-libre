@@ -35,15 +35,19 @@
                     <legend>Tus datos</legend>
                     <p>
                         <label for="nombre">Nombre completo</label>
-                        <input type="text" id="nombre" name="nombre" required>
+                        <input type="text" id="nombre" name="nombre" minlength="3" required>
+                    </p>
+                    <p>
+                        <label for="documento">Documento</label>
+                        <input type="text" id="documento" name="documento" inputmode="numeric" pattern="[0-9]{6,10}" title="Ingresa entre 6 y 10 dígitos, sin letras ni espacios." required>
                     </p>
                     <p>
                         <label for="correo">Correo electrónico</label>
                         <input type="email" id="correo" name="correo" required>
                     </p>
                     <p>
-                        <label for="telefono">Teléfono</label>
-                        <input type="tel" id="telefono" name="telefono" required>
+                        <label for="telefono">Celular</label>
+                        <input type="tel" id="telefono" name="telefono" inputmode="numeric" pattern="3[0-9]{9}" title="Ingresa 10 dígitos y comienza por 3, por ejemplo 3001234567." required>
                     </p>
                 </fieldset>
 
@@ -63,33 +67,33 @@
                         <label for="bicicleta-electrica">Eléctrica</label>
                     </p>
                     <p>
-                        <label for="fecha">Fecha de recogida</label>
-                        <input type="date" id="fecha" name="fecha" required>
-                    </p>
-                    <p>
-                        <label for="hora">Hora de recogida</label>
-                        <input type="time" id="hora" name="hora" required>
-                    </p>
-                    <p>
-                        <label for="duracion">Duración del alquiler</label>
-                        <select id="duracion" name="duracion" required>
-                            <option value="">Selecciona una duración</option>
+                        <label for="plan">Plan de alquiler</label>
+                        <select id="plan" name="plan" required>
+                            <option value="">Selecciona un plan</option>
                             <option value="1-hora">1 hora</option>
                             <option value="medio-dia">Medio día (4 h)</option>
                             <option value="dia-completo">Día completo</option>
                         </select>
+                    </p>
+                    <p>
+                        <label for="cantidad">Cantidad de bicicletas</label>
+                        <input type="number" id="cantidad" name="cantidad" min="1" max="6" step="1" required>
+                    </p>
+                    <p>
+                        <label for="fecha">Fecha del alquiler</label>
+                        <input type="date" id="fecha" name="fecha" min="2026-11-01" max="2026-12-31" required>
                     </p>
                 </fieldset>
 
                 <fieldset>
                     <legend>Confirmación</legend>
                     <p>
-                        <label for="observaciones">Observaciones</label>
-                        <textarea id="observaciones" name="observaciones" rows="4"></textarea>
+                        <label for="comentarios">Comentarios</label>
+                        <textarea id="comentarios" name="comentarios" rows="4" maxlength="300"></textarea>
                     </p>
                     <p>
-                        <input type="checkbox" id="confirmacion" name="confirmacion" value="acepto" required>
-                        <label for="confirmacion">Confirmo que mis datos son correctos y acepto que me contacten para confirmar la disponibilidad.</label>
+                        <input type="checkbox" id="politicas" name="politicas" value="aceptadas" required>
+                        <label for="politicas">Acepto las políticas de alquiler.</label>
                     </p>
                 </fieldset>
 
