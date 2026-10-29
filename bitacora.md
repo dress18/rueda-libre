@@ -116,3 +116,11 @@ Resultados consultados en WebAIM Contrast Checker. Se considera texto normal des
 ### Box model
 - En DevTools Computed, para una tarjeta con `width: 100%`, `padding: 1rem` y `border: 1px`, a 876 px de ancho de ventana, `content-box` produjo un ancho calculado de 812.8 px y un ancho total de 846.4 px.
 - Cambiando solo a `box-sizing: border-box`, el ancho total medido fue 812.8 px. El relleno y el borde quedan incluidos en el ancho asignado.
+
+### Cierre semanal: MiniRetos
+- Estructura semántica: páginas de inicio, tarifas y reservas con regiones, secciones, artículos, tablas, contenido complementario y pie; rutas internas documentadas.
+- Formulario: campos agrupados y etiquetados, validación nativa para los datos de reserva, patrones, rangos y aceptación de políticas; pruebas incorrectas registradas.
+- Accesibilidad y marca: textos alternativos, jerarquía, idioma y teclado revisados; contrastes WebAIM medidos y mapa de uso de color definido.
+- CSS y cascada: hoja externa compartida, variables de marca, Google Fonts, herencia, estados de enlaces/foco y conflicto de especificidad resueltos.
+- Box model y posicionamiento: `border-box`, tarjetas, tablas, formulario, etiqueta “Nuevo” anclada y WhatsApp fijo sin cubrir el pie.
+- Mejoraría: conectar el POST del formulario a un servicio real de reservas y sincronizar la rama local con la fuente configurada en GitHub Pages cuando se autorice publicar.

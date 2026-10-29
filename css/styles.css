@@ -1,3 +1,4 @@
+/* Variables */
 :root {
     --color-route-green: #1E7A4F;
     --color-pedal-orange: #F39A2B;
@@ -14,6 +15,7 @@
     --space-5: 3rem;
 }
 
+/* Base */
 *,
 *::before,
 *::after {
@@ -21,6 +23,8 @@
 }
 
 body {
+    margin: 0;
+    padding-bottom: calc(var(--space-5) + var(--space-2));
     background-color: var(--color-cream);
     color: var(--color-night-blue);
     font-family: var(--font-body);
@@ -42,20 +46,11 @@ header,
 footer {
     background-color: var(--color-night-blue);
     color: var(--color-white);
+    padding: var(--space-2);
 }
 
-header h1,
-header h2,
-header h3,
-header h4,
-header h5,
-header h6,
-footer h1,
-footer h2,
-footer h3,
-footer h4,
-footer h5,
-footer h6 {
+header :is(h1, h2, h3, h4, h5, h6),
+footer :is(h1, h2, h3, h4, h5, h6) {
     color: var(--color-white);
 }
 
@@ -68,6 +63,7 @@ footer a {
     color: var(--color-white);
 }
 
+/* Navegación */
 #menu {
     background-color: var(--color-cream);
     list-style: none;
@@ -102,62 +98,11 @@ footer a {
     outline-offset: 0.125rem;
 }
 
-.cta-reserva {
-    background-color: var(--color-route-green);
-    color: var(--color-white);
+#menu li {
     display: inline-block;
-    font-weight: 600;
-    padding: var(--space-1) var(--space-2);
-    text-decoration: none;
 }
 
-.cta-reserva:hover,
-.cta-reserva:focus {
-    background-color: var(--color-night-blue);
-    color: var(--color-white);
-    text-decoration: underline;
-}
-
-button {
-    background-color: var(--color-route-green);
-    color: var(--color-white);
-    font-family: var(--font-body);
-}
-
-button:hover,
-button:focus {
-    background-color: var(--color-night-blue);
-    color: var(--color-white);
-}
-
-input:hover,
-select:hover,
-textarea:hover {
-    border-color: var(--color-route-green);
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-    outline: 0.1875rem solid var(--color-night-blue);
-    outline-offset: 0.125rem;
-}
-
-a:focus,
-button:focus {
-    outline: 0.1875rem solid var(--color-night-blue);
-    outline-offset: 0.125rem;
-}
-
-header .cta-reserva:focus {
-    outline-color: var(--color-cream);
-}
-
-header > p a:focus,
-footer a:focus {
-    outline-color: var(--color-cream);
-}
-
+/* Componentes */
 main {
     width: 100%;
     max-width: 70rem;
@@ -170,12 +115,27 @@ main {
 }
 
 #servicios article {
+    position: relative;
     display: block;
     width: 100%;
     margin-block: var(--space-2);
     padding: var(--space-2);
     border: 1px solid var(--color-asphalt-gray);
     border-radius: var(--space-1);
+}
+
+.servicio-electrico h3 {
+    max-width: calc(100% - 5rem);
+}
+
+.etiqueta-nuevo {
+    position: absolute;
+    top: var(--space-2);
+    right: var(--space-2);
+    padding: var(--space-1);
+    background-color: var(--color-pedal-orange);
+    color: var(--color-night-blue);
+    font-weight: 600;
 }
 
 #servicios article img {
@@ -202,10 +162,53 @@ thead {
     color: var(--color-white);
 }
 
-#menu li {
+.cta-reserva,
+.enlace-whatsapp,
+button {
     display: inline-block;
+    padding: var(--space-1) var(--space-2);
+    background-color: var(--color-route-green);
+    color: var(--color-white);
+    font-family: var(--font-body);
+    font-weight: 600;
+    text-decoration: none;
 }
 
+.enlace-whatsapp {
+    position: fixed;
+    right: var(--space-2);
+    bottom: var(--space-2);
+    z-index: 10;
+}
+
+.cta-reserva:hover,
+.cta-reserva:focus,
+.enlace-whatsapp:hover,
+.enlace-whatsapp:focus,
+button:hover,
+button:focus {
+    background-color: var(--color-night-blue);
+    color: var(--color-white);
+    text-decoration: underline;
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 0.1875rem solid var(--color-night-blue);
+    outline-offset: 0.125rem;
+}
+
+header .cta-reserva:focus,
+header > p a:focus,
+footer a:focus,
+.enlace-whatsapp:focus {
+    outline-color: var(--color-cream);
+}
+
+/* Formulario */
 form fieldset {
     margin-block-end: var(--space-3);
     padding: var(--space-2);
@@ -241,7 +244,6 @@ form input[type="checkbox"] + label {
 }
 
 form button {
-    display: inline-block;
     padding: var(--space-2) var(--space-3);
     border: 1px solid var(--color-route-green);
 }
