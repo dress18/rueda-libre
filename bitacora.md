@@ -172,3 +172,17 @@ Criterio: Flexbox cuando el contenido se acomoda en una sola dimensión (una fil
 | Al probar con `overflow-wrap: anywhere` en las celdas, las palabras y los precios se partían a mitad ("$10.00 / 0", "Fáci / l"). | Quité esa propiedad y reduje solo el tamaño de letra y el relleno, de modo que cada dato cabe completo. |
 | El encabezado en fila dejaba el nombre y el menú apretados en una pantalla angosta. | Base en columna (`flex-direction: column`, `align-items: center`) y `row` con `space-between` desde 768 px. |
 | La portada, la galería de rutas y reservas usaban columnas fijas (2, 3 y 2:1) también en el celular. | Base en una columna (`1fr`) y las columnas con `fr` solo dentro de `@media (min-width: 768px)`. |
+
+### Prueba con Bootstrap 5.3 (`pruebas/catalogo-bootstrap.html`)
+- Página con la plantilla oficial de Bootstrap 5.3.8 (CSS y bundle de JavaScript por CDN, con `integrity`), sin enlace a `styles.css` y sin `<style>`. La distribución sale solo de las clases de la grilla: `container`, `row`, `g-3` y `col-12 col-sm-6 col-lg-4 col-xl-3`.
+- Comprobación a 360, 576, 992 y 1200 px: 1, 2, 3 y 4 columnas. Con el CSS y el JavaScript de Bootstrap 5.3.8 (el mismo paquete publicado en npm, servido en local para la prueba) no hubo errores de consola, `integrity` válido, sin scroll horizontal, tarjetas de la misma altura por fila y botones "Reservar" alineados al final. No pude revisar la pestaña Network contra el CDN real.
+- Tiempo invertido: unas 2 horas.
+
+| | Versión propia (MiniReto 3) | Bootstrap |
+| --- | --- | --- |
+| Código de la distribución de la flota | 22 líneas de CSS en 4 reglas (`.cuadricula-flota`, `#flota article`, `#flota article img`, `#flota article .cta-reserva`), sin media queries | 0 líneas de CSS propio; 7 clases distintas de grilla (`container`, `row`, `g-3`, `col-12`, `col-sm-6`, `col-lg-4`, `col-xl-3`) |
+| Columnas | `repeat(auto-fit, minmax(15rem, 1fr))`: el navegador decide (4, 3 y 1 columnas a 1280, 900 y 500 px) | 1, 2, 3 y 4 columnas en puntos fijos (360/576/992/1200 px) |
+| Separación | `gap: 1.5rem` | `g-3` (1rem) |
+
+- Qué me dio Bootstrap sin esfuerzo: los breakpoints y las columnas por ancho ya definidos, los gutters con una clase, `h-100`, `d-flex flex-column` y `mt-auto` para igualar alturas y bajar el botón, `img-fluid`, y botones con estilo (`btn btn-success`).
+- Qué control perdí: la cantidad de columnas ya no se adapta sola al espacio (si la flota o el ancho de tarjeta cambian, hay que reescribir las clases `col-*`); los puntos de cambio son los de Bootstrap (`sm` = 576 px, no 768 px); cada tarjeta necesita un `div.col` envolvente (siete `div` más); la separación y el borde salen de valores de Bootstrap en vez de mis variables de marca; y la página depende de un CDN externo
