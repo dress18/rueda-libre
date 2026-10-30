@@ -144,3 +144,18 @@ Resultados consultados en WebAIM Contrast Checker. Se considera texto normal des
 | 500 px | 1 |
 
 - En cada fila las tarjetas tienen la misma altura y los enlaces "Reservar" quedan alineados al final.
+
+### Layout general: Flexbox o Grid
+Criterio: Flexbox cuando el contenido se acomoda en una sola dimensión (una fila o una columna); Grid cuando hay que definir columnas y filas a la vez (dos dimensiones).
+
+| Caso | Elegí | Por qué |
+| --- | --- | --- |
+| Portada | Grid (`repeat(2, 1fr)`, `gap`, `align-items: center`) | Es una cuadrícula de dos columnas iguales (texto y foto); `fr` reparte el espacio y `align-items` centra verticalmente el bloque de texto. |
+| Galería "Nuestras rutas" | Grid (`repeat(3, 1fr)`, `gap`) | Son tarjetas en columnas de igual ancho que deben seguir una cuadrícula; Grid controla las columnas sin depender del contenido de cada tarjeta. |
+| Reservas | Grid (`2fr 1fr`, `gap`) | La proporción 2:1 entre formulario y contacto se expresa directamente con `fr`; Flexbox dependería del tamaño del contenido. |
+| Fila del formulario (documento y celular) | Flexbox (`gap`, `flex-wrap`) | Son solo dos campos en una línea (una dimensión); Flexbox los reparte por igual y los baja de línea si no caben. |
+| Encabezado | Flexbox (`justify-content: space-between`, `align-items: center`) | Es una sola fila: nombre en un extremo, menú en el otro, centrados verticalmente entre sí. |
+| Pie | Flexbox (`justify-content: space-between`, `align-items: flex-start`, `gap`) | Son tres bloques en una sola fila que pasan a otra línea cuando no caben; no se necesitan filas y columnas a la vez. |
+
+- Las columnas se definen con `fr`, sin porcentajes ni anchos en `px`.
+- Se revisó que el menú, la flota y los campos de validación del formulario siguen presentes y funcionando.

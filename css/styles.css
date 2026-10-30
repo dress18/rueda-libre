@@ -188,6 +188,54 @@ main {
     margin-top: auto;
 }
 
+#quienes-somos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+    align-items: center;
+}
+
+#quienes-somos img {
+    width: 100%;
+    height: auto;
+}
+
+.galeria-rutas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+}
+
+.galeria-rutas figure {
+    margin: 0;
+    padding: var(--space-2);
+    border: 1px solid var(--color-asphalt-gray);
+    border-radius: var(--space-1);
+}
+
+.galeria-rutas img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.layout-reservas {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-4);
+    align-items: start;
+}
+
+.fila-formulario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+.fila-formulario p {
+    flex: 1 1 12rem;
+}
+
 table {
     width: 100%;
     margin-block: var(--space-2);

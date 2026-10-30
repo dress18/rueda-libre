@@ -33,6 +33,7 @@
                 tu reserva.
             </p>
         </section>
+        <div class="layout-reservas">
         <section id="formulario-reserva">
             <h2>Formulario de reserva</h2>
             <form method="post">
@@ -43,17 +44,19 @@
                         <input type="text" id="nombre" name="nombre" minlength="3" required>
                     </p>
                     <p>
-                        <label for="documento">Documento</label>
-                        <input type="text" id="documento" name="documento" inputmode="numeric" pattern="[0-9]{6,10}" title="Ingresa entre 6 y 10 dígitos, sin letras ni espacios." required>
-                    </p>
-                    <p>
                         <label for="correo">Correo electrónico</label>
                         <input type="email" id="correo" name="correo" required>
                     </p>
-                    <p>
-                        <label for="telefono">Celular</label>
-                        <input type="tel" id="telefono" name="telefono" inputmode="numeric" pattern="3[0-9]{9}" title="Ingresa 10 dígitos y comienza por 3, por ejemplo 3001234567." required>
-                    </p>
+                    <div class="fila-formulario">
+                        <p>
+                            <label for="documento">Documento</label>
+                            <input type="text" id="documento" name="documento" inputmode="numeric" pattern="[0-9]{6,10}" title="Ingresa entre 6 y 10 dígitos, sin letras ni espacios." required>
+                        </p>
+                        <p>
+                            <label for="telefono">Celular</label>
+                            <input type="tel" id="telefono" name="telefono" inputmode="numeric" pattern="3[0-9]{9}" title="Ingresa 10 dígitos y comienza por 3, por ejemplo 3001234567." required>
+                        </p>
+                    </div>
                 </fieldset>
 
                 <fieldset>
@@ -119,6 +122,7 @@
                 a las 7:00 a. m.
             </p>
         </aside>
+        </div>
         <section>
             <h2>Consulta nuestras tarifas</h2>
             <p>
