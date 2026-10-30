@@ -159,3 +159,16 @@ Criterio: Flexbox cuando el contenido se acomoda en una sola dimensión (una fil
 
 - Las columnas se definen con `fr`, sin porcentajes ni anchos en `px`.
 - Se revisó que el menú, la flota y los campos de validación del formulario siguen presentes y funcionando.
+
+### MiniReto 4: responsive mobile-first
+- `styles.css` quedó reorganizado: los estilos base (sin media query) describen la versión móvil en una sola columna, y al final hay dos `@media (min-width: ...)`: tablet (768 px) para encabezado, pie, portada, galería de rutas, reservas y tablas, y escritorio (1200 px) para el relleno lateral de encabezado y pie y la separación de portada y galería.
+- Encabezado y pie: en celular el nombre va arriba y el menú debajo, centrado, y los tres bloques del pie se apilan; desde 768 px se recupera la fila del MiniReto 1.
+- Imágenes: regla global `img { max-width: 100%; height: auto; }`; no encontré imágenes más anchas que su contenedor.
+- Pruebas a 360, 768 y 1280 px en las tres páginas: el ancho del documento coincide con el de la ventana, sin scroll horizontal.
+
+| Problema responsive | Cómo lo resolví |
+| --- | --- |
+| A 360 px la página de tarifas medía 424 px de ancho: las tablas obligaban a desplazarse de lado. | En móvil las celdas usan `padding: 0.25rem` y `font-size: 0.75rem`; desde 768 px vuelven al relleno y tamaño normales. |
+| Al probar con `overflow-wrap: anywhere` en las celdas, las palabras y los precios se partían a mitad ("$10.00 / 0", "Fáci / l"). | Quité esa propiedad y reduje solo el tamaño de letra y el relleno, de modo que cada dato cabe completo. |
+| El encabezado en fila dejaba el nombre y el menú apretados en una pantalla angosta. | Base en columna (`flex-direction: column`, `align-items: center`) y `row` con `space-between` desde 768 px. |
+| La portada, la galería de rutas y reservas usaban columnas fijas (2, 3 y 2:1) también en el celular. | Base en una columna (`1fr`) y las columnas con `fr` solo dentro de `@media (min-width: 768px)`. |

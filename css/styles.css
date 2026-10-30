@@ -42,6 +42,11 @@ h6 {
     font-weight: 700;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 header,
 footer {
     background-color: var(--color-night-blue);
@@ -53,22 +58,13 @@ footer {
 }
 
 header {
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-}
-
-header nav {
-    margin-inline-start: auto;
+    text-align: center;
 }
 
 footer {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-footer > div {
-    flex: 1 1 15rem;
+    flex-direction: column;
 }
 
 header :is(h1, h2, h3, h4, h5, h6),
@@ -92,6 +88,7 @@ footer a {
     padding: var(--space-1);
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: var(--space-1);
 }
 
@@ -190,9 +187,8 @@ main {
 
 #quienes-somos {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-4);
-    align-items: center;
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
 }
 
 #quienes-somos img {
@@ -202,7 +198,7 @@ main {
 
 .galeria-rutas {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: var(--space-3);
 }
 
@@ -221,9 +217,8 @@ main {
 
 .layout-reservas {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr;
     gap: var(--space-4);
-    align-items: start;
 }
 
 .fila-formulario {
@@ -244,7 +239,8 @@ table {
 
 th,
 td {
-    padding: var(--space-1);
+    padding: 0.25rem;
+    font-size: 0.75rem;
     border: 1px solid var(--color-night-blue);
     text-align: left;
 }
@@ -344,4 +340,68 @@ strong,
 label,
 th {
     font-weight: 600;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: start;
+    }
+
+    header nav {
+        margin-inline-start: auto;
+    }
+
+    #menu {
+        justify-content: flex-start;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    footer > div {
+        flex: 1 1 15rem;
+    }
+
+    #quienes-somos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+        align-items: center;
+    }
+
+    .galeria-rutas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .layout-reservas {
+        grid-template-columns: 2fr 1fr;
+        align-items: start;
+    }
+
+    th,
+    td {
+        padding: var(--space-1);
+        font-size: 1rem;
+    }
+}
+
+/* Escritorio */
+@media (min-width: 1200px) {
+    header,
+    footer {
+        padding-inline: var(--space-4);
+    }
+
+    #quienes-somos {
+        gap: var(--space-5);
+    }
+
+    .galeria-rutas {
+        gap: var(--space-4);
+    }
 }
