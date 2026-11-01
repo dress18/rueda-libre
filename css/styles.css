@@ -248,6 +248,11 @@ textarea:focus {
     outline-offset: 0.125rem;
 }
 
+.navbar :is(a, button):focus-visible {
+    outline: 0.1875rem solid var(--color-night-blue);
+    outline-offset: 0.1875rem;
+}
+
 footer a:focus,
 .enlace-whatsapp:focus {
     outline-color: var(--color-cream);
