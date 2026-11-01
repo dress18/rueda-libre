@@ -141,32 +141,6 @@ footer .btn-outline-success {
     height: auto;
 }
 
-.cuadricula-flota {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    gap: var(--space-3);
-}
-
-#flota article {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: var(--space-2);
-    border: 1px solid var(--color-asphalt-gray);
-    border-radius: var(--space-1);
-}
-
-#flota article img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-#flota article .btn {
-    align-self: flex-start;
-    margin-top: auto;
-}
-
 #quienes-somos {
     display: grid;
     grid-template-columns: 1fr;
@@ -178,23 +152,33 @@ footer .btn-outline-success {
     height: auto;
 }
 
-.galeria-rutas {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-3);
+.card-img-top {
+    height: 12rem;
+    object-fit: cover;
 }
 
-.galeria-rutas figure {
-    margin: 0;
+.carousel-promo .carousel-item img {
+    height: clamp(14rem, 40vw, 28rem);
+    object-fit: cover;
+}
+
+.carousel-promo .carousel-caption {
+    right: 15%;
+    bottom: 1rem;
+    left: 15%;
     padding: var(--space-2);
-    border: 1px solid var(--color-asphalt-gray);
     border-radius: var(--space-1);
+    background-color: rgb(20 33 61 / 85%);
+    color: var(--color-white);
 }
 
-.galeria-rutas img {
-    display: block;
-    width: 100%;
-    height: auto;
+.carousel-promo .carousel-caption h3 {
+    color: var(--color-white);
+}
+
+.carousel-promo .carousel-control-prev,
+.carousel-promo .carousel-control-next {
+    width: 12%;
 }
 
 .layout-reservas {
@@ -336,10 +320,6 @@ th {
         align-items: center;
     }
 
-    .galeria-rutas {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
     .layout-reservas {
         grid-template-columns: 2fr 1fr;
         align-items: start;
@@ -363,7 +343,4 @@ th {
         gap: var(--space-5);
     }
 
-    .galeria-rutas {
-        gap: var(--space-4);
-    }
 }
