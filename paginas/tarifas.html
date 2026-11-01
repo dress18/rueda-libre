@@ -8,26 +8,49 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 
     <header>
-        <img src="../img/logo.jpeg" alt="Logo de Rueda Libre" width="150">
-        <h1>Tarifas de Rueda Libre</h1>
-        <p>Consulta nuestros precios de alquiler y recorridos guiados.</p>
-
-        <nav>
-            <ul id="menu">
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a class="activo" href="./tarifas.html">Tarifas y rutas</a></li>
-                <li><a href="./reservas.html">Reservas</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
+            <div class="container">
+                <a href="../index.html" class="navbar-brand fw-bold fs-3">
+                    <span class="text-success">🚲</span>
+                    Rueda Libre
+                </a>
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal"
+                    aria-expanded="false"
+                    aria-label="Abrir menú de navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+                        <li class="nav-item">
+                            <a href="../index.html" class="nav-link fw-semibold">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./tarifas.html" class="nav-link active fw-semibold" aria-current="page">Tarifas y rutas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./reservas.html" class="nav-link fw-semibold">Reservas</a>
+                        </li>
+                        <li class="nav-item mt-2 mt-lg-0">
+                            <a href="./reservas.html" class="btn btn-success btn-sm rounded-pill px-4 fw-semibold">Reservar ahora</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-        <p><a class="cta-reserva" href="./reservas.html">Reservar ahora</a></p>
     </header>
 
     <main>
+        <h1>Tarifas de Rueda Libre</h1>
+        <p>Consulta nuestros precios de alquiler y recorridos guiados.</p>
         <section id="tarifas-alquiler">
             <h2>Tarifas de alquiler de bicicletas</h2>
 
@@ -122,17 +145,18 @@
         <div>
             <h2>Rueda Libre</h2>
             <p>&copy; 2026 Rueda Libre. Todos los derechos reservados.</p>
-            <a href="../index.html">Volver a la página principal</a>
+            <a class="btn btn-outline-success" href="../index.html">Volver a la página principal</a>
         </div>
         <div>
             <h2>Contacto</h2>
-            <p><a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p>
+            <p><a class="btn btn-outline-success" href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p>
         </div>
         <div>
             <h2>Horario</h2>
             <p>Lunes a domingo<br>7:00 a. m. – 6:00 p. m.</p>
         </div>
     </footer>
-    <a class="enlace-whatsapp" href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    <a class="enlace-whatsapp btn btn-success btn-sm" href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
