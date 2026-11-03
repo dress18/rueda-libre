@@ -8,6 +8,27 @@
     --color-white: #FFFFFF;
     --font-heading: "Montserrat", sans-serif;
     --font-body: "Open Sans", sans-serif;
+    --bs-primary: var(--color-route-green);
+    --bs-primary-rgb: 30, 122, 79;
+    --bs-secondary: var(--color-asphalt-gray);
+    --bs-secondary-rgb: 91, 100, 112;
+    --bs-secondary-color: var(--color-asphalt-gray);
+    --bs-secondary-color-rgb: 91, 100, 112;
+    --bs-danger: #B02A37;
+    --bs-danger-rgb: 176, 42, 55;
+    --bs-form-invalid-color: #B02A37;
+    --bs-body-font-family: var(--font-body);
+    --bs-body-color: var(--color-night-blue);
+    --bs-body-bg: var(--color-cream);
+    --bs-link-color: var(--color-route-green);
+    --bs-link-color-rgb: 30, 122, 79;
+    --bs-link-hover-color: #165C3C;
+    --bs-link-hover-color-rgb: 22, 92, 60;
+    --bs-border-radius: 0.75rem;
+    --bs-border-radius-sm: 0.5rem;
+    --bs-border-radius-lg: 1rem;
+    --bs-border-radius-xl: 1.5rem;
+    --bs-border-radius-xxl: 2rem;
     --space-1: 0.5rem;
     --space-2: 1rem;
     --space-3: 1.5rem;
@@ -54,6 +75,20 @@ main {
     font-weight: 600;
 }
 
+.navbar .nav-link {
+    color: var(--color-route-green);
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus-visible {
+    color: #165C3C;
+}
+
+.navbar .nav-link.active {
+    color: var(--color-night-blue);
+}
+
+.btn-primary,
 .btn-success {
     --bs-btn-color: var(--color-white);
     --bs-btn-bg: var(--color-route-green);
@@ -64,6 +99,20 @@ main {
     --bs-btn-active-color: var(--color-white);
     --bs-btn-active-bg: var(--color-night-blue);
     --bs-btn-active-border-color: var(--color-night-blue);
+    --bs-btn-focus-shadow-rgb: 30, 122, 79;
+}
+
+.btn-pedal {
+    --bs-btn-color: var(--color-night-blue);
+    --bs-btn-bg: var(--color-pedal-orange);
+    --bs-btn-border-color: var(--color-pedal-orange);
+    --bs-btn-hover-color: var(--color-night-blue);
+    --bs-btn-hover-bg: #E2891B;
+    --bs-btn-hover-border-color: #E2891B;
+    --bs-btn-active-color: var(--color-night-blue);
+    --bs-btn-active-bg: #D67A13;
+    --bs-btn-active-border-color: #D67A13;
+    --bs-btn-focus-shadow-rgb: 243, 154, 43;
 }
 
 .btn-outline-success {
@@ -88,6 +137,10 @@ footer {
     color: var(--color-white);
 }
 
+.pie-pagina {
+    border-radius: var(--bs-border-radius) var(--bs-border-radius) 0 0;
+}
+
 footer h2 {
     color: var(--color-cream);
 }
@@ -109,6 +162,19 @@ footer .btn-outline-success {
 
 #quienes-somos {
     min-height: 70vh;
+}
+
+.portada {
+    margin-block: var(--space-3) var(--space-5);
+    padding: var(--space-3);
+    border-radius: var(--bs-border-radius-lg);
+    background: linear-gradient(135deg, #E8F1EB, var(--color-cream) 65%);
+}
+
+.titulo-seccion {
+    margin-block-end: var(--space-3);
+    padding-inline-start: var(--space-2);
+    border-inline-start: 0.3rem solid var(--color-route-green);
 }
 
 #servicios article {
@@ -135,16 +201,26 @@ footer .btn-outline-success {
     font-weight: 600;
 }
 
+.beneficio-lista {
+    padding-inline-start: 0;
+    list-style: none;
+}
+
+.beneficio-lista li {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-1);
+    margin-block: var(--space-1);
+}
+
+.beneficio-lista .bi {
+    color: var(--color-route-green);
+}
+
 #servicios article img {
     display: block;
     width: 100%;
     height: auto;
-}
-
-#quienes-somos {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-3);
 }
 
 #quienes-somos img {
@@ -179,12 +255,6 @@ footer .btn-outline-success {
 .carousel-promo .carousel-control-prev,
 .carousel-promo .carousel-control-next {
     width: 12%;
-}
-
-.layout-reservas {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-4);
 }
 
 .fila-formulario {
@@ -315,17 +385,6 @@ th {
         flex: 1 1 15rem;
     }
 
-    #quienes-somos {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--space-4);
-        align-items: center;
-    }
-
-    .layout-reservas {
-        grid-template-columns: 2fr 1fr;
-        align-items: start;
-    }
-
     th,
     td {
         padding: var(--space-1);
@@ -338,10 +397,6 @@ th {
     header,
     footer {
         padding-inline: var(--space-4);
-    }
-
-    #quienes-somos {
-        gap: var(--space-5);
     }
 
 }

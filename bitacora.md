@@ -186,3 +186,34 @@ Criterio: Flexbox cuando el contenido se acomoda en una sola dimensión (una fil
 
 - Qué me dio Bootstrap sin esfuerzo: los breakpoints y las columnas por ancho ya definidos, los gutters con una clase, `h-100`, `d-flex flex-column` y `mt-auto` para igualar alturas y bajar el botón, `img-fluid`, y botones con estilo (`btn btn-success`).
 - Qué control perdí: la cantidad de columnas ya no se adapta sola al espacio (si la flota o el ancho de tarjeta cambian, hay que reescribir las clases `col-*`); los puntos de cambio son los de Bootstrap (`sm` = 576 px, no 768 px); cada tarjeta necesita un `div.col` envolvente (siete `div` más); la separación y el borde salen de valores de Bootstrap en vez de mis variables de marca; y la página depende de un CDN externo
+
+## Cierre de semana 1 — Personalización v2.0
+- Se conectó la paleta de Rueda Libre a los tokens CSS de Bootstrap: Verde Ruta para `primary` y enlaces, Open Sans para el cuerpo y radios de borde propios. Los botones principales usan Verde Ruta; `.btn-pedal` usa Naranja Pedal con texto Azul Noche y estados hover/active contrastantes.
+- También se ajustaron los tonos secundarios y de validación de Bootstrap para que el texto secundario y los errores del formulario conserven contraste AA sobre Crema.
+- Se añadieron las clases complementarias `.portada`, `.titulo-seccion`, `.pie-pagina` y `.beneficio-lista`. Las grillas de portada, rutas, flota y reservas siguen la estructura `container > row > col`.
+- Bootstrap Icons se carga por CDN y acompaña la navegación, los beneficios, el contacto y WhatsApp. Los íconos decorativos tienen `aria-hidden="true"` y los controles solo con ícono cuentan con nombre accesible.
+- Bootstrap no fue modificado; `styles.css` queda después de Bootstrap, cada página usa un único bundle y no se añadieron reglas `!important` ni clases de versiones anteriores.
+- Pruebas responsive en Inicio, Tarifas y Reservas a 390, 768 y 1280 px: sin desbordamiento horizontal. La portada y las tarjetas cambian de columnas según el ancho; en móvil, el menú se expande con Enter al recibir foco por teclado.
+- Prueba de teclado: Tab enfoca el enlace de marca y después el botón del menú; Enter abre el menú y actualiza `aria-expanded`.
+- Contraste medido en las combinaciones de texto y fondo de marca:
+
+| Texto | Fondo | Ratio |
+| --- | --- | ---: |
+| Verde Ruta `#1E7A4F` | Crema `#FAF6EF` | 4.93:1 |
+| Verde Ruta `#1E7A4F` | Blanco `#FFFFFF` | 5.31:1 |
+| Verde oscuro hover `#165C3C` | Crema `#FAF6EF` | 7.41:1 |
+| Blanco `#FFFFFF` | Verde Ruta `#1E7A4F` | 5.31:1 |
+| Azul Noche `#14213D` | Naranja Pedal `#F39A2B` | 7.20:1 |
+| Azul Noche `#14213D` | Naranja hover `#E2891B` | 5.95:1 |
+| Azul Noche `#14213D` | Naranja active `#D67A13` | 5.06:1 |
+| Gris Asfalto `#5B6470` | Crema `#FAF6EF` | 5.57:1 |
+| Error `#B02A37` | Crema `#FAF6EF` | 6.03:1 |
+| Azul Noche `#14213D` | Crema `#FAF6EF` | 14.83:1 |
+| Blanco `#FFFFFF` | Azul Noche `#14213D` | 15.97:1 |
+
+- Versión 2.0 preparada en el workspace. No se creó commit ni se hizo push.
+
+### Capturas antes y después
+| Antes | Después |
+| --- | --- |
+| ![Antes de la personalización](img/capturas/v1-antes.png) | ![Después de la personalización v2.0](img/capturas/v2-despues.png) |

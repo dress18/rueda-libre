@@ -10,11 +10,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
+    <meta name="application-version" content="2.0">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3" aria-label="Navegación principal">
+        <nav class="navbar navbar-expand-lg bg-white shadow-sm py-3" data-bs-theme="light" aria-label="Navegación principal">
             <div class="container">
                 <a href="../index.html" class="navbar-brand fw-bold fs-3">
                     <i class="bi bi-bicycle" aria-hidden="true"></i>
@@ -48,19 +50,19 @@
         </nav>
     </header>
 
-    <main>
+    <main class="container">
         <h1>Reserva tu bicicleta</h1>
         <section>
-            <h2>Reserva con nosotros</h2>
+            <h2 class="titulo-seccion">Reserva con nosotros</h2>
             <p>
                 ¿Quieres disfrutar de un recorrido en bicicleta?
                 Escríbenos para consultar la disponibilidad y realizar
                 tu reserva.
             </p>
         </section>
-        <div class="layout-reservas">
-        <section id="formulario-reserva">
-            <h2>Formulario de reserva</h2>
+        <div class="layout-reservas row g-4">
+        <section class="col-12 col-lg-8" id="formulario-reserva">
+            <h2 class="titulo-seccion">Formulario de reserva</h2>
             <div class="alert alert-info alert-dismissible fade show" role="alert">
                 Recuerda traer tu documento de identidad original al recoger la bicicleta.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar aviso"></button>
@@ -76,7 +78,7 @@
                     <div class="mb-3">
                         <label class="form-label" for="correo">Correo electrónico</label>
                         <input class="form-control" type="email" id="correo" name="correo" aria-describedby="correo-error" required>
-                        <div class="invalid-feedback" id="correo-error">Ingresa un correo válido, por ejemplo nombre@dominio.com.</div>
+                        <div class="invalid-feedback" id="correo-error">Ingresa un correo válido, por ejemplo ejemplo@gmail.com.</div>
                     </div>
                     <div class="fila-formulario">
                         <div class="mb-3">
@@ -87,7 +89,7 @@
                         <div class="mb-3">
                             <label class="form-label" for="telefono">Celular</label>
                             <input class="form-control" type="tel" id="telefono" name="telefono" inputmode="numeric" pattern="3[0-9]{9}" title="Ingresa 10 dígitos y comienza por 3, por ejemplo 3001234567." aria-describedby="telefono-error" required>
-                            <div class="invalid-feedback" id="telefono-error">Ingresa 10 dígitos y comienza por 3, por ejemplo 3001234567.</div>
+                            <div class="invalid-feedback" id="telefono-error">Ingresa 10 dígitos y comienza por 3, por ejemplo 3000000000.</div>
                         </div>
                     </div>
                 </fieldset>
@@ -174,8 +176,8 @@
                 </div>
             </div>
         </section>
-        <aside>
-            <h2>Horario de atención</h2>
+        <aside class="col-12 col-lg-4">
+            <h2 class="titulo-seccion">Horario de atención</h2>
             <dl>
                 <dt>Lunes a viernes</dt>
                 <dd>8:00 a. m. a 6:00 p. m.</dd>
@@ -190,7 +192,7 @@
         </aside>
         </div>
         <section>
-            <h2>Consulta nuestras tarifas</h2>
+            <h2 class="titulo-seccion">Consulta nuestras tarifas</h2>
             <p>
                 Revisa los precios de alquiler y los recorridos
                 antes de realizar tu reserva.
@@ -198,7 +200,7 @@
             <a class="btn btn-outline-success" href="tarifas.html">Ver tarifas y rutas</a>
         </section>
     </main>
-    <footer>
+    <footer class="pie-pagina">
         <div>
             <h2>Rueda Libre</h2>
             <p>&copy; 2026 Rueda Libre. Todos los derechos reservados.</p>
@@ -206,14 +208,14 @@
         </div>
         <div>
             <h2>Contacto</h2>
-            <p><a class="btn btn-outline-success" href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p>
+            <p><i class="bi bi-envelope" aria-hidden="true"></i> <a class="btn btn-outline-success" href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p>
         </div>
         <div>
             <h2>Horario</h2>
             <p>Lunes a domingo<br>7:00 a. m. – 6:00 p. m.</p>
         </div>
     </footer>
-    <a class="enlace-whatsapp btn btn-success btn-sm" href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    <a class="enlace-whatsapp btn btn-success btn-sm" href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp" aria-hidden="true"></i> WhatsApp</a>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         (() => {
