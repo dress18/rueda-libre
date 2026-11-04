@@ -217,3 +217,8 @@ Criterio: Flexbox cuando el contenido se acomoda en una sola dimensión (una fil
 | Antes | Después |
 | --- | --- |
 | ![Antes de la personalización](img/capturas/v1-antes.png) | ![Después de la personalización v2.0](img/capturas/v2-despues.png) |
+
+## Semana 2 — Prototipo Rueda Nocturna con Tailwind
+- En el prototipo Bootstrap de la semana 2, el enlace se construyó como `<a class="btn btn-success" href="...">Inscríbete</a>`: Bootstrap aporta la forma y el comportamiento visual del botón, y la personalización de marca ajusta sus variables de color.
+- Hoy, en `nocturna/prototipo.html`, el enlace es `<a class="inline-flex w-full max-w-xs items-center justify-center rounded-2xl bg-black-800 border border-white/20 shadow-lg px-8 py-4 text-lg font-bold ...">Inscríbete</a>`; las utilidades de Tailwind definen directamente su forma, color, espacio, tipografía y estados de interacción, sin clase de componente ni CSS propio.
+- Diferencia clave: un framework de componentes ofrece piezas con apariencia predefinida que se aplican con pocas clases; uno utility-first permite componer el estilo propiedad por propiedad directamente en el marcado, con más control y más utilidades visibles en el HTML.
