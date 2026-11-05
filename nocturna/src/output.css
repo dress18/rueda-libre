@@ -8,6 +8,11 @@
       "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-amber-300: oklch(87.9% 0.169 91.605);
+    --color-amber-400: oklch(82.8% 0.189 84.429);
+    --color-emerald-200: oklch(90.5% 0.093 164.15);
+    --color-emerald-300: oklch(84.5% 0.143 164.978);
+    --color-slate-950: oklch(12.9% 0.042 264.695);
     --color-gray-400: oklch(70.7% 0.022 261.325);
     --color-gray-600: oklch(44.6% 0.03 256.802);
     --color-neutral-950: oklch(14.5% 0 none);
@@ -24,8 +29,6 @@
     --text-lg--line-height: calc(1.75 / 1.125);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
-    --text-3xl: 1.875rem;
-    --text-3xl--line-height: calc(2.25 / 1.875);
     --text-5xl: 3rem;
     --text-5xl--line-height: 1;
     --text-6xl: 3.75rem;
@@ -314,10 +317,6 @@
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
   }
-  .text-3xl {
-    font-size: var(--text-3xl);
-    line-height: var(--tw-leading, var(--text-3xl--line-height));
-  }
   .text-5xl {
     font-size: var(--text-5xl);
     line-height: var(--tw-leading, var(--text-5xl--line-height));
@@ -358,9 +357,6 @@
   }
   .uppercase {
     text-transform: uppercase;
-  }
-  .underline {
-    text-decoration-line: underline;
   }
   .shadow-2xl {
     --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
@@ -557,6 +553,62 @@
       --tw-ring-offset-shadow: 0 0 #0000;
       --tw-duration: initial;
       --tw-outline-style: solid;
+    }
+  }
+}
+@layer components {
+  .button {
+    display: inline-flex;
+    width: 100%;
+    min-height: 3.5rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 25%), 0 4px 6px -4px rgb(0 0 0 / 25%);
+    transition: color 200ms ease, background-color 300ms ease, border-color 200ms ease;
+  }
+  .button:focus-visible {
+    outline: 4px solid #fff;
+    outline-offset: 4px;
+  }
+  .button--primary {
+    border-color: #fff;
+    background-color: #fff;
+    color: #17181b;
+  }
+  .button--primary:hover {
+    scale: 1.02;
+    transition: 300ms;
+  }
+  .button--secondary {
+    border-color: #4b4d52;
+    background-color: #3a3c41;
+    color: #fff;
+  }
+  .button--secondary:hover {
+    scale: 1.02;
+    transition: 300ms;
+  }
+  .button--outline {
+    border-color: rgb(255 255 255 / 20%);
+    background-color: transparent;
+    color: #fff;
+  }
+  .button--outline:hover {
+    border-color: #fff;
+    background-color: #fff;
+    color: #000;
+    scale: 1.02;
+    transition: 300ms;
+  }
+  @media (width >= 40rem) {
+    .button {
+      width: auto;
     }
   }
 }

@@ -1,1 +1,64 @@
 @import "tailwindcss";
+
+@layer components {
+    .button {
+        display: inline-flex;
+        width: 100%;
+        min-height: 3.5rem;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid transparent;
+        border-radius: 1rem;
+        padding: 0.75rem 1.5rem;
+        font-size: 1.125rem;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 25%), 0 4px 6px -4px rgb(0 0 0 / 25%);
+        transition: color 200ms ease, background-color 200ms ease, border-color 200ms ease;
+    }
+
+    .button:focus-visible {
+        outline: 4px solid #fff;
+        outline-offset: 4px;
+    }
+
+    .button--primary {
+        border-color: #fff;
+        background-color: #fff;
+        color: #17181b;
+    }
+
+    .button--primary:hover {
+        border-color: #e5e7eb;
+        background-color: #e5e7eb;
+    }
+
+    .button--secondary {
+        border-color: #4b4d52;
+        background-color: #3a3c41;
+        color: #fff;
+    }
+
+    .button--secondary:hover {
+        border-color: #5b5e65;
+        background-color: #4b4d52;
+    }
+
+    .button--outline {
+        border-color: rgb(255 255 255 / 20%);
+        background-color: transparent;
+        color: #fff;
+    }
+
+    .button--outline:hover {
+        border-color: #fff;
+        background-color: #fff;
+        color: #000;
+    }
+
+    @media (width >= 40rem) {
+        .button {
+            width: auto;
+        }
+    }
+}
