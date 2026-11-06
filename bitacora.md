@@ -243,3 +243,16 @@ Criterio: Flexbox cuando el contenido se acomoda en una sola dimensión (una fil
 - Se reutilizó el mismo contenedor centrado (`mx-auto w-full max-w-7xl` con `px-6`, `sm:px-10` y `lg:px-16`) en el encabezado, cada sección y el pie, para alinear sus contenidos.
 - Se eligió CSS Grid para las rutas porque son elementos bidimensionales que deben alinearse en tres columnas iguales en escritorio; `grid-cols-1 md:grid-cols-2 lg:grid-cols-3` adapta la cantidad de columnas al ancho disponible. También se eligió Grid para los cuatro pasos: conserva el orden semántico de la lista y distribuye cada paso en una columna uniforme (`grid-cols-1 sm:grid-cols-2 lg:grid-cols-4`). Flexbox se usó en encabezado, franja de inscripción y pie, que organizan elementos en una sola dimensión.
 - La navegación usa enlaces a `#inicio`, `#rutas`, `#como-funciona` y `#inscripcion`. Se reutilizaron sin variantes nuevas los botones (`button--primary` y `button--outline`) y las clases de card de `componentes.html`.
+
+#### Responsive mobile-first
+- Revisión inicial a 360 px: no se observó scroll horizontal y rutas y pasos ya aparecían en una columna. Sí se identificaron estos problemas: los tres enlaces a secciones seguían visibles y se amontonaban con el botón; el encabezado ocupaba 196 px de alto por el menú apilado y el botón ancho completo; el encabezado no pasaba a fila hasta `lg`; las rutas no pasaban a dos columnas hasta `md` (768 px), aunque el cambio solicitado es desde `sm` (640 px); el título empezaba en `text-5xl` y la portada usaba `p-8` y `py-12` incluso en móvil, reduciendo el espacio disponible.
+- Ajustes: estilos base sin prefijo para móvil, enlaces de sección ocultos hasta `md` y botón de inscripción siempre visible; encabezado en fila desde `md`; rutas en una, dos (`sm`, 640 px) y tres (`lg`, 1024 px) columnas; pasos en una, dos (`sm`) y cuatro (`lg`) columnas. Se redujeron tipografía, rellenos y separación en móvil y se aumentaron progresivamente con `sm:` y `lg:`.
+- Verificación en vista del navegador con viewport adaptable, después de recompilar `src/output.css`; `document.documentElement.scrollWidth` no superó el ancho de viewport en ninguna medida:
+
+| Ancho | Rutas | Pasos | Encabezado | Enlaces de sección | Scroll horizontal |
+| ---: | ---: | ---: | --- | --- | --- |
+| 360 px | 1 columna | 1 columna | Apilado | Ocultos; botón visible | No |
+| 768 px | 2 columnas | 2 columnas | Fila | Visibles | No |
+| 1024 px | 3 columnas | 4 columnas | Fila | Visibles | No |
+| 1280 px | 3 columnas | 4 columnas | Fila | Visibles | No |
+- Se comprobó además el umbral de 640 px: las rutas cambian a dos columnas desde `sm`; los estilos móviles permanecen sin prefijo.
