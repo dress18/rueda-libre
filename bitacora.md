@@ -228,3 +228,13 @@ Criterio: Flexbox cuando el contenido se acomoda en una sola dimensión (una fil
 
 #### Minireto 2
 - Al buscar en la bitácora la clase bg-pink-500 no apareció, pero al buscar bg-neutral-950 si aparece, esto sucede porque el output solo genera las clases que estoy utilizando
+
+#### Kit de componentes
+- Comparación de enfoques: el prototipo muestra un botón compuesto directamente con utilidades de Tailwind; `nocturna/src/input.css` concentra las tres variantes de botón reutilizables (`button--primary`, `button--secondary` y `button--outline`). La página de componentes combina esas variantes con utilidades para las cards, alertas y campos, evitando duplicar reglas de presentación.
+- Verificación de generación: se compila con `npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css` desde `nocturna/`. Tailwind detecta las clases de `componentes.html` y las escribe en `src/output.css`; las clases no utilizadas no se generan. El HTML carga la hoja con la ruta relativa `./src/output.css`.
+- Reglas del kit:
+  - Radio uniforme de 1 rem (`rounded-2xl`) en botones, tarjetas, alertas y campos; las etiquetas de nivel usan forma de píldora (`rounded-full`) como distintivo.
+  - Escala de espacio basada en múltiplos de 4 px (`p-4`, `p-6`, `p-8`, `gap-4`, `space-y-2`, `space-y-4` y equivalentes); rellenos específicos de botones en `input.css` también son múltiplos de 4 px.
+  - Base oscura compartida: `bg-black/90`, `bg-neutral-950` y `bg-black/40`; texto principal blanco y secundario gris. Los botones reutilizan los colores neutrales del kit; la información usa azul cielo, éxito verde esmeralda y advertencia ámbar, cada una con texto y borde lateral del mismo tono.
+  - Los botones tienen estados hover y foco visible del kit; la card tiene hover sutil y los campos muestran un contorno verde de foco visible. Los enlaces son operables con teclado, las etiquetas apuntan a sus campos mediante `for`/`id` y la alerta de éxito usa `role="status"` con `aria-live="polite"`.
+- Publicación: la ruta prevista de GitHub Pages respondió 404 antes de publicar. No se hizo push; por ello la página queda preparada localmente, pero todavía no tiene una URL pública verificable.
