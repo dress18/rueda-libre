@@ -18,42 +18,81 @@
     }
 
     .button:focus-visible {
-        outline: 4px solid #fff;
+        outline: 4px solid #1e7a4f;
         outline-offset: 4px;
     }
 
     .button--primary {
-        border-color: #fff;
-        background-color: #fff;
-        color: #17181b;
+        border-color: #1e7a4f;
+        background-color: #1e7a4f;
+        color: #fff;
     }
 
     .button--primary:hover {
-        border-color: #e5e7eb;
-        background-color: #e5e7eb;
+        border-color: #17643f;
+        background-color: #17643f;
     }
 
     .button--secondary {
-        border-color: #4b4d52;
-        background-color: #3a3c41;
-        color: #fff;
+        border-color: #d1d5db;
+        background-color: #f3f4f6;
+        color: #17181b;
     }
 
     .button--secondary:hover {
-        border-color: #5b5e65;
-        background-color: #4b4d52;
+        border-color: #9ca3af;
+        background-color: #e5e7eb;
     }
 
     .button--outline {
-        border-color: rgb(255 255 255 / 20%);
+        border-color: #1e7a4f;
         background-color: transparent;
-        color: #fff;
+        color: #1e7a4f;
     }
 
     .button--outline:hover {
-        border-color: #fff;
-        background-color: #fff;
-        color: #000;
+        border-color: #1e7a4f;
+        background-color: #1e7a4f;
+        color: #fff;
+    }
+
+    @variant dark {
+        .button:focus-visible {
+            outline-color: #fff;
+        }
+
+        .button--primary {
+            border-color: #fff;
+            background-color: #fff;
+            color: #17181b;
+        }
+
+        .button--primary:hover {
+            border-color: #e5e7eb;
+            background-color: #e5e7eb;
+        }
+
+        .button--secondary {
+            border-color: #4b4d52;
+            background-color: #3a3c41;
+            color: #fff;
+        }
+
+        .button--secondary:hover {
+            border-color: #5b5e65;
+            background-color: #4b4d52;
+        }
+
+        .button--outline {
+            border-color: rgb(255 255 255 / 20%);
+            color: #fff;
+        }
+
+        .button--outline:hover {
+            border-color: #fff;
+            background-color: #fff;
+            color: #000;
+        }
     }
 
     @media (width >= 40rem) {
@@ -61,4 +100,17 @@
             width: auto;
         }
     }
+}
+
+@theme{
+    --color-route-green: #1E7A4F;
+    --color-route-green-on-dark: #4ADE80;
+    --color-pedal-orange: #F39A2B;
+    --color-night-blue: #14213D;
+    --color-cream: #FAF6EF;
+    --color-asphalt-gray: #5B6470;
+    --color-white: #FFFFFF;
+    --color-amarillo-farol: #FFD166;
+    --font-heading: "Montserrat", sans-serif;
+    --font-body: "Open Sans", sans-serif;
 }
