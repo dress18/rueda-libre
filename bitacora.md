@@ -306,4 +306,12 @@ Criterio: Flexbox cuando el contenido se acomoda en una sola dimensión (una fil
 - Desde la landing, el logo vuelve a `../index.html` y “Reserva tu bici” abre `../paginas/reservas.html`; los enlaces relativos conservan la ruta bajo GitHub Pages.
 - Se igualaron los ocho tokens de color entre Bootstrap y `@theme`; ambas versiones usan Montserrat para encabezados y Open Sans para texto. El pie de la landing comparte el correo y horario del sitio principal.
 - Verificación local: enlaces, fragmentos y recursos de las cuatro páginas pasaron el comprobador; páginas, CSS e imagen respondieron HTTP 200. El CSS minificado actualizado mide **29.838 bytes**.
-- Tiempo real: **31 min 27 s** (inicio 16:51:09, fin 17:03:37).
+- Tiempo real: **31 min 27 s**.
+
+## Planes Rueda Nocturna
+- Se añadió la sección con planes Individual, Pareja y Grupo (4 a 8), precios y beneficios solicitados. Las tres cards usan la misma estructura, `p-6`, Grid responsive, listas Flexbox y CTA al formulario; Pareja destaca con borde verde de 2 px, fondo distinto y la etiqueta «Más elegido».
+- DevTools, escritorio: las cards midieron aproximadamente **362,93 px de ancho**, **568,04 px de alto** y **24 px de padding** cada una. Los CTA quedan visualmente alineados al fondo.
+- DevTools, móvil (360 px): una columna y `scrollWidth` igual a `clientWidth` (sin desbordamiento horizontal).
+- Contraste medido: texto blanco sobre Verde Ruta **5,31:1**; Azul Noche sobre Verde Ruta claro **9,17:1**; texto gris claro sobre fondo oscuro **9,96:1**.
+- CSS Tailwind minificado: **30.522 bytes**. `git diff --check` pasó; no queda trabajo pendiente para esta sección.
+- Tiempo real: **23 min 22 s**.
