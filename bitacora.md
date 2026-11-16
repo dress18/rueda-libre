@@ -289,10 +289,10 @@ Criterio: Flexbox cuando el contenido se acomoda en una sola dimensión (una fil
 | --- | --- | --- |
 | Curva de aprendizaje | Menor para comenzar: componentes listos con `btn`, navbar, collapse y carousel; el proyecto ya usa esos patrones. | Mayor al inicio: hay que conocer y combinar utilidades; `@apply` y el kit reducen la repetición sin ocultar el diseño responsive. |
 | Personalización | La paleta de marca se conectó con variables de Bootstrap y ajustes en `css/styles.css`; los componentes parten de estilos predefinidos. | `@theme`, utilidades y modificadores `dark:` adaptan directamente los colores, estados y breakpoints de la marca; los botones comunes se encapsulan en tres clases. |
-| Tamaño final | CSS: 232.111 B descomprimidos; bundle JS: 80.496 B. El CDN transfirió 33.348 B y 24.769 B respectivamente. | Hoja minificada compartida por landing y kit: 29.583 B descomprimidos y transferidos por el servidor local sin compresión. La comparación de CSS es de recursos, no de páginas equivalentes en funcionalidad. |
+| Tamaño final | CSS: 232.111 B descomprimidos; bundle JS: 80.496 B. El CDN transfirió 33.348 B y 24.769 B respectivamente. | Hoja minificada compartida por landing y kit: **30.522 B**. La comparación de CSS es de recursos, no de páginas equivalentes en funcionalidad. |
 | Casos de uso | Conveniente para construir con rapidez un sitio multipágina con patrones estándar e interacciones ya resueltas. | Conveniente para interfaces responsive muy personalizadas, controlar con precisión la marca/tema y generar solo las utilidades detectadas; las interacciones se implementan aparte. |
 
-- Recomendación para Rueda Libre: **Tailwind CSS**, porque la identidad visual propia, los temas claro/oscuro y la personalización responsive son centrales, y la hoja observada queda muy por debajo del CSS base de Bootstrap. La comparación funcional todavía es parcial: la landing Tailwind no replica el carousel ni el menú colapsable de v2.0. Antes de migrar todo el sitio, se deben reconstruir y probar esas interacciones y medir el CSS generado para todas las páginas; si el plazo no permite ese trabajo, conservar Bootstrap es la opción de menor riesgo.
+- Recomendación para Rueda Libre: **Tailwind CSS**, porque la identidad visual propia, los temas claro/oscuro y la personalización responsive son centrales, y la hoja observada queda **86,9 %** por debajo del CSS base de Bootstrap. La comparación funcional todavía es parcial: la landing Tailwind no replica el carousel ni el menú colapsable de v2.0. Antes de migrar todo el sitio, se deben reconstruir y probar esas interacciones y medir el CSS generado para todas las páginas; si el plazo no permite ese trabajo, conservar Bootstrap es la opción de menor riesgo.
 
 ## Formulario de inscripción (ejercicio)
 - Se agregaron los datos de contacto, ruta, día de salida, acompañantes, experiencia, bicicleta propia y aceptación de condiciones en conjuntos semánticos con título; cada control tiene etiqueta asociada y validación nativa.
@@ -315,3 +315,12 @@ Criterio: Flexbox cuando el contenido se acomoda en una sola dimensión (una fil
 - Contraste medido: texto blanco sobre Verde Ruta **5,31:1**; Azul Noche sobre Verde Ruta claro **9,17:1**; texto gris claro sobre fondo oscuro **9,96:1**.
 - CSS Tailwind minificado: **30.522 bytes**. `git diff --check` pasó; no queda trabajo pendiente para esta sección.
 - Tiempo real: **23 min 22 s**.
+
+## Cierre de lanzamiento
+- Validación W3C Nu local: `index.html`, `paginas/tarifas.html`, `paginas/reservas.html` y `nocturna/index.html`, cada una con **0 errores y 0 advertencias**.
+- Responsive local: a 360, 768 y 1280 px, `scrollWidth` coincide con `clientWidth` en las cuatro páginas. En la landing, la preferencia del sistema cambia el fondo de `rgb(250, 246, 239)` a `rgb(20, 33, 61)`.
+- Formularios: la inscripción nocturna vacía e inválida queda bloqueada; una inscripción válida muestra el estado de prueba y no envía ni guarda datos. La reserva de bicicleta vacía e inválida queda bloqueada y sus restricciones aceptan datos de prueba completos; no se envió porque no hay backend configurado.
+- Se detectó el 404 automático de `/favicon.ico` durante la revisión local y se corrigió añadiendo `img/favicon.svg` y sus enlaces a las ocho páginas HTML. La navegación y los recursos de esos ocho documentos volvieron a revisarse sin errores HTTP locales.
+- El W3C arroja que todo está correcto y que no hay ningun error ni ningún 404
+- Capturas reales guardadas: `img/capturas/rueda-nocturna-escritorio.png`, `rueda-nocturna-celular.png` y `rueda-nocturna-modo-oscuro.png`.
+
