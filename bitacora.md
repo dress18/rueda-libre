@@ -289,7 +289,15 @@ Criterio: Flexbox cuando el contenido se acomoda en una sola dimensión (una fil
 | --- | --- | --- |
 | Curva de aprendizaje | Menor para comenzar: componentes listos con `btn`, navbar, collapse y carousel; el proyecto ya usa esos patrones. | Mayor al inicio: hay que conocer y combinar utilidades; `@apply` y el kit reducen la repetición sin ocultar el diseño responsive. |
 | Personalización | La paleta de marca se conectó con variables de Bootstrap y ajustes en `css/styles.css`; los componentes parten de estilos predefinidos. | `@theme`, utilidades y modificadores `dark:` adaptan directamente los colores, estados y breakpoints de la marca; los botones comunes se encapsulan en tres clases. |
-| Tamaño final | CSS: 232.111 B descomprimidos; bundle JS: 80.496 B. El CDN transfirió 33.348 B y 24.769 B respectivamente. | Hoja minificada compartida por landing y kit: 29.236 B descomprimidos y transferidos por el servidor local sin compresión. La comparación de CSS es de recursos, no de páginas equivalentes en funcionalidad. |
+| Tamaño final | CSS: 232.111 B descomprimidos; bundle JS: 80.496 B. El CDN transfirió 33.348 B y 24.769 B respectivamente. | Hoja minificada compartida por landing y kit: 29.583 B descomprimidos y transferidos por el servidor local sin compresión. La comparación de CSS es de recursos, no de páginas equivalentes en funcionalidad. |
 | Casos de uso | Conveniente para construir con rapidez un sitio multipágina con patrones estándar e interacciones ya resueltas. | Conveniente para interfaces responsive muy personalizadas, controlar con precisión la marca/tema y generar solo las utilidades detectadas; las interacciones se implementan aparte. |
 
 - Recomendación para Rueda Libre: **Tailwind CSS**, porque la identidad visual propia, los temas claro/oscuro y la personalización responsive son centrales, y la hoja observada queda muy por debajo del CSS base de Bootstrap. La comparación funcional todavía es parcial: la landing Tailwind no replica el carousel ni el menú colapsable de v2.0. Antes de migrar todo el sitio, se deben reconstruir y probar esas interacciones y medir el CSS generado para todas las páginas; si el plazo no permite ese trabajo, conservar Bootstrap es la opción de menor riesgo.
+
+## Formulario de inscripción (ejercicio)
+- Se agregaron los datos de contacto, ruta, día de salida, acompañantes, experiencia, bicicleta propia y aceptación de condiciones en conjuntos semánticos con título; cada control tiene etiqueta asociada y validación nativa.
+- Verificación: formulario vacío bloqueado; nombre menor de 3 caracteres, correo inválido, celular que no empieza por 3/no tiene 10 dígitos y acompañantes fuera de 0–3 bloqueados. El envío válido se completó solo con teclado y mostró el estado accesible; la URL no cambió.
+- Responsive y temas: campos cortos en dos columnas desde `md`, una columna en móvil, sin desbordamiento en 360 px; comprobado en móvil oscuro y escritorio claro.
+- CSS Tailwind regenerado con `--minify`: **29.583 bytes**.
+- Tiempo real del ejercicio: **17 min 13 s** (inicio 16:25:04, fin 16:42:17).
+- Pendiente: ninguno para el ejercicio. Por indicación del cliente, el formulario no envía ni guarda datos; no se configuró backend.
