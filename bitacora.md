@@ -256,3 +256,40 @@ Criterio: Flexbox cuando el contenido se acomoda en una sola dimensión (una fil
 | 1024 px | 3 columnas | 4 columnas | Fila | Visibles | No |
 | 1280 px | 3 columnas | 4 columnas | Fila | Visibles | No |
 - Se comprobó además el umbral de 640 px: las rutas cambian a dos columnas desde `sm`; los estilos móviles permanecen sin prefijo.
+
+#### Refactor de clases y comparativa Bootstrap vs Tailwind
+- Inventario de repeticiones en `nocturna/index.html` antes de refactorizar:
+
+| Elemento o lista de clases | Repeticiones | Observación |
+| --- | ---: | --- |
+| Botón primario (`button button--primary`) | 5 | Navegación, tres reservas de ruta e inscripción final |
+| Botón contorno (`button button--outline`) | 1 | Acción de la portada |
+| Card de ruta (lista de clases idéntica) | 3 | Las tres cards ya reutilizaban el mismo marcado del kit |
+| Etiqueta de nivel | 3 | Mismo patrón y estructura; varían los colores para Fácil, Medio y Difícil |
+| `space-y-1` | 9 | Repetida en cada dato de las tres rutas |
+| `block text-sm text-gray-600 dark:text-gray-400` | 9 | Etiquetas Distancia, Duración y Punto de encuentro |
+| `block text-lg font-semibold text-gray-900 dark:text-white` | 9 | Valores de esos mismos datos |
+| Campos de entrada | 2 | Una lista de clases idéntica por campo en `componentes.html`; la landing no incluye formulario |
+
+- Refactor de botones: `button` ahora representa el estilo primario y se reutiliza en los cinco botones de la landing; `button--outline` queda para el sexto. El kit conserva `button--secondary` y `button--outline`. Las tres clases propias (`.button`, `.button--secondary` y `.button--outline`) se definen en `@layer components` con `@apply`; las reglas de tema oscuro sobrescriben las mismas clases. Hay seis directivas `@apply` contando esas sobrescrituras, pero solo tres selectores/clases únicos.
+- Las clases de `index.html` y `componentes.html` se ordenaron por layout, espaciado, tipografía, color y modificadores/estados. Las cards conservan la lista idéntica del kit en las tres apariciones, sin crear una clase compuesta innecesaria.
+- Generación de producción desde `nocturna/`: `npm exec -- tailwindcss -i ./src/input.css -o ./src/output.css --minify`. El recurso `src/output.css` resultante mide **29.236 bytes** (29,24 kB); contiene utilidades de la landing y del kit, que comparten la hoja. En el servidor local sin compresión, el navegador midió 29.236 bytes de cuerpo y 29.536 bytes transferidos incluyendo cabeceras.
+- Medición de v2.0 en el navegador, con recursos de Bootstrap 5.3.8 de jsDelivr y caché evitada para las solicitudes medidas. En Network, `transferSize` incluye cabeceras; `encodedBodySize` es el cuerpo comprimido y `decodedBodySize` es el tamaño del recurso sin comprimir:
+
+| Recurso | Transferido | Cuerpo comprimido | Recurso descomprimido |
+| --- | ---: | ---: | ---: |
+| Bootstrap `bootstrap.min.css` | 33.348 B | 33.048 B | 232.111 B |
+| Bootstrap `bootstrap.bundle.min.js` | 24.769 B | 24.469 B | 80.496 B |
+| Tailwind `output.css` (local, servido sin compresión) | 29.536 B | 29.236 B | 29.236 B |
+
+  La hoja de Bootstrap Icons y `css/styles.css` son recursos adicionales de v2.0 y no están incluidos en esa comparación. El servidor de prueba no comprime Tailwind, así que para comparar el contenido en condiciones equivalentes se usan los tamaños descomprimidos: la hoja generada de Tailwind resulta **87,4 % menor** que el CSS base de Bootstrap. Bootstrap además descarga el bundle JS para sus componentes interactivos; Tailwind no incluye JavaScript.
+- Comparativa basada en estas implementaciones:
+
+| Criterio | Bootstrap 5.3.8 (sitio v2.0) | Tailwind CSS 4.3.4 (landing) |
+| --- | --- | --- |
+| Curva de aprendizaje | Menor para comenzar: componentes listos con `btn`, navbar, collapse y carousel; el proyecto ya usa esos patrones. | Mayor al inicio: hay que conocer y combinar utilidades; `@apply` y el kit reducen la repetición sin ocultar el diseño responsive. |
+| Personalización | La paleta de marca se conectó con variables de Bootstrap y ajustes en `css/styles.css`; los componentes parten de estilos predefinidos. | `@theme`, utilidades y modificadores `dark:` adaptan directamente los colores, estados y breakpoints de la marca; los botones comunes se encapsulan en tres clases. |
+| Tamaño final | CSS: 232.111 B descomprimidos; bundle JS: 80.496 B. El CDN transfirió 33.348 B y 24.769 B respectivamente. | Hoja minificada compartida por landing y kit: 29.236 B descomprimidos y transferidos por el servidor local sin compresión. La comparación de CSS es de recursos, no de páginas equivalentes en funcionalidad. |
+| Casos de uso | Conveniente para construir con rapidez un sitio multipágina con patrones estándar e interacciones ya resueltas. | Conveniente para interfaces responsive muy personalizadas, controlar con precisión la marca/tema y generar solo las utilidades detectadas; las interacciones se implementan aparte. |
+
+- Recomendación para Rueda Libre: **Tailwind CSS**, porque la identidad visual propia, los temas claro/oscuro y la personalización responsive son centrales, y la hoja observada queda muy por debajo del CSS base de Bootstrap. La comparación funcional todavía es parcial: la landing Tailwind no replica el carousel ni el menú colapsable de v2.0. Antes de migrar todo el sitio, se deben reconstruir y probar esas interacciones y medir el CSS generado para todas las páginas; si el plazo no permite ese trabajo, conservar Bootstrap es la opción de menor riesgo.
