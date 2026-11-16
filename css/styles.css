@@ -1,11 +1,13 @@
 /* Variables */
 :root {
     --color-route-green: #1E7A4F;
+    --color-route-green-on-dark: #4ADE80;
     --color-pedal-orange: #F39A2B;
     --color-night-blue: #14213D;
     --color-cream: #FAF6EF;
     --color-asphalt-gray: #5B6470;
     --color-white: #FFFFFF;
+    --color-amarillo-farol: #FFD166;
     --font-heading: "Montserrat", sans-serif;
     --font-body: "Open Sans", sans-serif;
     --bs-primary: var(--color-route-green);
@@ -85,6 +87,15 @@ main {
 }
 
 .navbar .nav-link.active {
+    color: var(--color-night-blue);
+}
+
+.navbar .navbar-brand {
+    color: var(--color-route-green);
+}
+
+.navbar .navbar-brand:hover,
+.navbar .navbar-brand:focus-visible {
     color: var(--color-night-blue);
 }
 

@@ -24,7 +24,7 @@
         }
 
         .button--outline {
-            @apply border-white/20 text-white hover:border-white hover:bg-white hover:text-black;
+            @apply border-white/20 bg-transparent text-white hover:border-white hover:bg-white hover:text-black;
         }
     }
 
@@ -46,4 +46,15 @@
     --color-amarillo-farol: #FFD166;
     --font-heading: "Montserrat", sans-serif;
     --font-body: "Open Sans", sans-serif;
+}
+
+@layer base {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-heading);
+    }
 }

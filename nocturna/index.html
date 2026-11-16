@@ -5,24 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Explora Medellín de noche con Rueda Nocturna. Elige tu ruta e inscríbete.">
     <title>Rueda Nocturna | Rueda Libre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link href="./src/output.css" rel="stylesheet">
 </head>
-<body class="min-h-screen font-sans bg-gray-50 text-gray-900 dark:bg-night-blue dark:text-white">
+<body class="min-h-screen font-body bg-cream text-gray-900 dark:bg-night-blue dark:text-white">
     <header class="rounded-3xl m-4 bg-white shadow-sm dark:bg-neutral-950">
         <div class="flex w-full max-w-7xl flex-col items-center justify-between mx-auto gap-4 px-6 py-4 sm:gap-6 sm:px-10 sm:py-5 md:flex-row lg:px-16">
-            <a class="flex items-center gap-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white" href="#inicio" aria-label="Rueda Libre, inicio">
-                <svg class="h-10 w-10 text-gray-900 dark:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <a class="flex items-center gap-2 text-2xl font-bold tracking-tight text-route-green dark:text-route-green-on-dark" href="../index.html" aria-label="Rueda Libre, volver al inicio">
+                <svg class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <circle cx="5" cy="18" r="3"></circle>
                     <circle cx="19" cy="18" r="3"></circle>
                     <path d="m5 18 4-8h4l6 8h-7l-3-6m4-8h-2m2 0 2 4h3"></path>
                 </svg>
-                Rueda <span class="text-blue-800 dark:text-blue-400">Libre</span>
+                Rueda <span class="text-route-green dark:text-route-green-on-dark">Libre</span>
             </a>
             <nav class="flex flex-wrap items-center justify-center gap-4 sm:gap-6" aria-label="Navegación principal">
                 <a class="hidden text-sm font-semibold text-gray-600 transition-colors hover:text-gray-900 focus-visible:outline focus-visible:outline-offset-4 focus-visible:outline-gray-900 dark:text-gray-300 dark:hover:text-white dark:focus-visible:outline-white md:inline-flex" href="#rutas">Rutas</a>
                 <a class="hidden text-sm font-semibold text-gray-600 transition-colors hover:text-gray-900 focus-visible:outline focus-visible:outline-offset-4 focus-visible:outline-gray-900 dark:text-gray-300 dark:hover:text-white dark:focus-visible:outline-white md:inline-flex" href="#como-funciona">Cómo funciona</a>
                 <a class="hidden text-sm font-semibold text-gray-600 transition-colors hover:text-gray-900 focus-visible:outline focus-visible:outline-offset-4 focus-visible:outline-gray-900 dark:text-gray-300 dark:hover:text-white dark:focus-visible:outline-white md:inline-flex" href="#inscripcion">Inscripción</a>
                 <a class="button" href="#inscripcion">Inscríbete</a>
+                <a class="button button--outline" href="../paginas/reservas.html">Reserva tu bici</a>
             </nav>
         </div>
     </header>
@@ -282,19 +286,19 @@
         </section>
     </main>
 
-    <footer class="mt-6 border-t border-gray-200 bg-white sm:mt-8 dark:border-white/10 dark:bg-neutral-950">
+    <footer class="mt-6 border-t border-night-blue bg-night-blue sm:mt-8 dark:border-white/10 dark:bg-neutral-950">
         <div class="flex w-full max-w-7xl flex-col mx-auto gap-6 px-6 py-8 sm:gap-8 sm:px-10 sm:py-10 md:flex-row md:items-start md:justify-between lg:px-16">
             <div class="space-y-2">
-                <a class="text-xl font-bold text-gray-900 dark:text-white" href="#inicio">Rueda <span class="text-blue-800 dark:text-blue-400">Libre</span></a>
-                <p class="text-sm text-gray-600 dark:text-gray-400">Pedalea la ciudad a tu manera.</p>
+                <a class="text-xl font-bold text-cream dark:text-white" href="../index.html">Rueda Libre</a>
+                <p class="text-sm text-white">Pedalea la ciudad a tu manera.</p>
             </div>
             <div class="space-y-2">
-                <h2 class="text-sm font-bold uppercase tracking-widest text-gray-900 dark:text-white">Contacto</h2>
-                <a class="text-sm text-gray-600 transition-colors hover:text-gray-900 focus-visible:outline focus-visible:outline-offset-4 focus-visible:outline-gray-900 dark:text-gray-400 dark:hover:text-white dark:focus-visible:outline-white" href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a>
+                <h2 class="text-sm font-bold uppercase tracking-widest text-cream dark:text-white">Contacto</h2>
+                <a class="text-sm text-white transition-colors hover:text-cream focus-visible:outline focus-visible:outline-offset-4 focus-visible:outline-white dark:hover:text-white" href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a>
             </div>
             <div class="space-y-2">
-                <h2 class="text-sm font-bold uppercase tracking-widest text-gray-900 dark:text-white">Salidas</h2>
-                <p class="text-sm text-gray-600 dark:text-gray-400">Jueves a sábado · Desde la sede Rueda Libre</p>
+                <h2 class="text-sm font-bold uppercase tracking-widest text-cream dark:text-white">Horario</h2>
+                <p class="text-sm text-white">Lunes a domingo · 7:00 a. m. – 6:00 p. m.</p>
             </div>
         </div>
     </footer>

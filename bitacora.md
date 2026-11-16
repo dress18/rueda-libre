@@ -300,4 +300,10 @@ Criterio: Flexbox cuando el contenido se acomoda en una sola dimensión (una fil
 - Responsive y temas: campos cortos en dos columnas desde `md`, una columna en móvil, sin desbordamiento en 360 px; comprobado en móvil oscuro y escritorio claro.
 - CSS Tailwind regenerado con `--minify`: **29.583 bytes**.
 - Tiempo real del ejercicio: **17 min 13 s** (inicio 16:25:04, fin 16:42:17).
-- Pendiente: ninguno para el ejercicio. Por indicación del cliente, el formulario no envía ni guarda datos; no se configuró backend.
+
+## Integración Bootstrap + Tailwind
+- Se añadió el enlace a Rueda Nocturna en la navbar de Inicio, Tarifas y Reservas, y una cuarta diapositiva del carrusel con CTA hacia `nocturna/index.html`.
+- Desde la landing, el logo vuelve a `../index.html` y “Reserva tu bici” abre `../paginas/reservas.html`; los enlaces relativos conservan la ruta bajo GitHub Pages.
+- Se igualaron los ocho tokens de color entre Bootstrap y `@theme`; ambas versiones usan Montserrat para encabezados y Open Sans para texto. El pie de la landing comparte el correo y horario del sitio principal.
+- Verificación local: enlaces, fragmentos y recursos de las cuatro páginas pasaron el comprobador; páginas, CSS e imagen respondieron HTTP 200. El CSS minificado actualizado mide **29.838 bytes**.
+- Tiempo real: **31 min 27 s** (inicio 16:51:09, fin 17:03:37).
